@@ -60,14 +60,14 @@ for service in "${services[@]}"; do
         systemctl mask "$service" > /dev/null
 done
 
-systemctl --global enable quern-user-maintenance
+systemctl --global enable cipher-user-maintenance
 
 services=(
     fstrim.timer
     rpm-ostreed-automatic.timer
-    quern-capabilities
-    quern-cleaner
-    quern-remount
+    cipher-capabilities
+    cipher-cleaner
+    cipher-remount
     tlp
 )
 
