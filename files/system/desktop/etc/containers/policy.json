@@ -1,0 +1,20 @@
+{
+  "default": [
+    {
+      "type": "reject"
+    }
+  ],
+  "transports": {
+    "docker": {
+      "ghcr.io/quantumcerberus": [
+        {
+          "type": "sigstoreSigned",
+          "keyPath": "/usr/etc/pki/containers/quantumcerberus.pub",
+          "signedIdentity": {
+          "type": "matchRepository"
+          }
+        }
+      ]
+    }
+  }
+}
