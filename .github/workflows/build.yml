@@ -16,6 +16,7 @@ jobs:
       matrix:
         recipe:
           - cipherblue.yml
+          #- ciphercore.yml
     steps:
       - name: Build Cipherblue
         uses: blue-build/github-action@main
