@@ -5,8 +5,8 @@ image-version: 41-x86_64
 modules:
     - type: script
       scripts:
-        - httpsmirrors.sh
-        - cipherblue-cleanup.sh
+        - common/httpsmirrors.sh
+        - desktop/cipherblue-cleanup.sh
     - type: rpm-ostree
       repos: 
         - https://copr.fedorainfracloud.org/coprs/secureblue/hardened-chromium/repo/fedora-%OS_VERSION%/secureblue-hardened-chromium-fedora-%OS_VERSION%.repo
@@ -508,10 +508,10 @@ modules:
           destination: /etc
     - type: script
       scripts:
-        - cipherblue-cleanup.sh
-        - authselect-hardening.sh
-        - file-permission-hardening.sh
-        - systemd-services-hardening.sh
-        - selinux-boolean-hardening.sh
-        - suid-hardening.sh
+        - desktop/cipherblue-cleanup.sh
+        - desktop/authselect-hardening.sh
+        - desktop/file-permission-hardening.sh
+        - desktop/systemd-services-hardening.sh
+        - desktop/selinux-boolean-hardening.sh
+        - common/suid-hardening.sh
     - type: cipherblue-signing
