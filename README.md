@@ -1,4 +1,4 @@
-# cipherblue &nbsp; 
+# CipherBlue &nbsp; 
 
 [![build-cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
