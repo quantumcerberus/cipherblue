@@ -500,6 +500,12 @@ modules:
         - yelp-libs
         - yelp-xsl
         - zip
+        - dnf5
+        - dnf5-plugins
+        - libdnf5
+        - libdnf5-cli
+        - rpm-build-libs
+        - sdbus-cpp
     - type: files
       files:
         - source: system/desktop/usr
