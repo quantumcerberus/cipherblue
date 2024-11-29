@@ -11,6 +11,7 @@ modules:
       install:
         - usbguard
         - firewalld
+        - policycoreutils-python-utils
       remove:
         - sudo
     - type: files
