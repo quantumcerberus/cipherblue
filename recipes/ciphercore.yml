@@ -5,8 +5,8 @@ image-version: stable
 modules:
     - type: script
       scripts:
-        - httpsmirrors.sh
-        - cipherblue-cleanup.sh
+        - common/httpsmirrors.sh
+        - server/ciphercore-cleanup.sh
     - type: rpm-ostree
       install:
         - usbguard
@@ -21,11 +21,11 @@ modules:
           destination: /etc
     - type: script
       scripts:
-        - cipherblue-cleanup.sh
-        - authselect-hardening.sh
-        - ciphercoredefaultzone.sh
-        - file-permission-hardening.sh
-        - systemd-services-hardening.sh
-        - selinux-boolean-hardening.sh
-        - suid-hardening.sh
+        - server/ciphercore-cleanup.sh
+        - server/authselect-hardening.sh
+        - server/ciphercoredefaultzone.sh
+        - server/file-permission-hardening.sh
+        - server/systemd-services-hardening.sh
+        - server/selinux-boolean-hardening.sh
+        - common/suid-hardening.sh
     - type: cipherblue-signing
