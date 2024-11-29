@@ -112,12 +112,18 @@ fwupdmgr update
 
 ```
 # fstab hardening
-sed -i 's/zstd:1/zstd/g' /etc/fstab
+if ! grep -q 'zstd' /etc/fstab; then
+    sed -i 's/zstd:1/zstd/g' /etc/fstab
+fi
+
 FILE="/etc/fstab"
 
-sed -i -e 's/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev/' \
-       -e 's/shortname=winnt/shortname=winnt,nosuid,noexec,nodev/' \
-       -e 's/defaults/defaults,nosuid,noexec,nodev/' "$FILE"
+# Add the hardening options only if they're not already present
+if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev' "$FILE"; then
+    sed -i -e 's/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev/' \
+           -e 's/shortname=winnt/shortname=winnt,nosuid,noexec,nodev/' \
+           -e 's/defaults/defaults,nosuid,noexec,nodev/' "$FILE"
+fi
 
 echo "fstab hardening complete."
 
