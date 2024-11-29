@@ -123,7 +123,6 @@ echo "fstab hardening complete."
 
 # firewall hardening
 systemctl enable --now firewalld
-firewall-cmd --set-default-zone=drop
 firewall-cmd --reload
 firewall-cmd --lockdown-on
 
