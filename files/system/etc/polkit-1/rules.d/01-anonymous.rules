@@ -1,0 +1,17 @@
+polkit.addRule(function(action, subject) {
+    if ((action.id == "com.endlessm.ParentalControls.AppFilter.ReadOwn" ||
+	 action.id == "org.freedesktop.NetworkManager.enable-disable-network" ||
+	 action.id == "org.freedesktop.NetworkManager.enable-disable-wifi" ||
+         action.id == "org.freedesktop.NetworkManager.wifi.scan" ||
+         action.id == "org.freedesktop.NetworkManager.network-control" ||
+         action.id == "org.freedesktop.NetworkManager.settings.modify.system" ||
+	 action.id == "org.freedesktop.udisks2.filesystem-mount" ||
+	 action.id == "org.freedesktop.udisks2.modify-device" ||
+	 action.id == "org.freedesktop.udisks2.eject-media" ||
+	 action.id == "org.projectatomic.rpmostree1.repo-refresh" ||
+         action.id == "org.projectatomic.rpmostree1.upgrade") &&
+	 subject.active == true && subject.local == true &&
+         subject.isInGroup("anonymous")) {
+         return polkit.Result.YES;
+    }
+});
