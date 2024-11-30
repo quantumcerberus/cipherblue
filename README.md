@@ -33,7 +33,7 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 cosign verify --key cosign.pub ghcr.io/quantumcerberus/cipherblue
 ```
 
-## cipherblue Post-Install Scripts
+## CipherBlue Post-Install Scripts
 
 ### Kernel Parameter Hardening
 
@@ -118,7 +118,6 @@ fi
 
 FILE="/etc/fstab"
 
-# Add the hardening options only if they're not already present
 if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev' "$FILE"; then
     sed -i -e 's/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev/' \
            -e 's/shortname=winnt/shortname=winnt,nosuid,noexec,nodev/' \
@@ -206,5 +205,5 @@ echo "Hardening complete. Now head to secureblue page to refer other post-instal
 
 ```
 # no bash except for sysadmin
-sed -i '/^sysadmin/!s#/bin/bash#/sbin/nologin#g' /etc/passwd # run finally
+sed -i '/^sysadmin/!s#/bin/bash#/sbin/nologin#g' /etc/passwd
 ```
