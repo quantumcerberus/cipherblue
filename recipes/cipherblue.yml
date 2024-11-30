@@ -516,6 +516,6 @@ modules:
         - authselect-hardening.sh
         - file-permission-hardening.sh
         - systemd-services-hardening.sh
-        #- selinux-boolean-hardening.sh
+        - selinux-boolean-hardening.sh
         - suid-hardening.sh
     - type: cipherblue-signing
