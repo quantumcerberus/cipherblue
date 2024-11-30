@@ -306,7 +306,6 @@ echo "fstab hardening complete."
 
 # firewall hardening
 systemctl enable --now firewalld
-firewall-cmd --reload
 firewall-cmd --lockdown-on
 
 echo "firewall hardening complete."
