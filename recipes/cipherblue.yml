@@ -5,8 +5,8 @@ image-version: 41-x86_64
 modules:
     - type: script
       scripts:
-        - common/httpsmirrors.sh
-        - desktop/cipherblue-cleanup.sh
+        - httpsmirrors.sh
+        - cipherblue-cleanup.sh
     - type: rpm-ostree
       repos: 
         - https://copr.fedorainfracloud.org/coprs/secureblue/hardened-chromium/repo/fedora-%OS_VERSION%/secureblue-hardened-chromium-fedora-%OS_VERSION%.repo
@@ -139,6 +139,8 @@ modules:
         - dhcp-client
         - dhcp-common
         - djvulibre-libs
+        - dnf5
+        - dnf5-plugins
         - dnsmasq
         - elfutils-debuginfod-client
         - epiphany-runtime
@@ -298,6 +300,8 @@ modules:
         - libcaca
         - libcupsfilters
         - libdc1394
+        - libdnf5
+        - libdnf5-cli
         - liberation-mono-fonts
         - liberation-sans-fonts
         - liberation-serif-fonts
@@ -426,6 +430,7 @@ modules:
         - realmd
         - rit-meera-new-fonts
         - rit-rachana-fonts
+        - rpm-build-libs
         - rsync
         - rygel
         - samba-client
@@ -434,6 +439,7 @@ modules:
         - sane-backends-drivers-cameras
         - sane-backends-drivers-scanners
         - sane-backends-libs
+        - sdbus-cpp
         - sil-padauk-fonts
         - slirp4netns
         - sos
@@ -500,24 +506,18 @@ modules:
         - yelp-libs
         - yelp-xsl
         - zip
-        - dnf5
-        - dnf5-plugins
-        - libdnf5
-        - libdnf5-cli
-        - rpm-build-libs
-        - sdbus-cpp
     - type: files
       files:
-        - source: system/desktop/usr
+        - source: system/usr
           destination: /usr
-        - source: system/desktop/etc
+        - source: system/etc
           destination: /etc
     - type: script
       scripts:
-        - desktop/cipherblue-cleanup.sh
-        - desktop/authselect-hardening.sh
-        - desktop/file-permission-hardening.sh
-        - desktop/systemd-services-hardening.sh
-        - desktop/selinux-boolean-hardening.sh
-        - common/suid-hardening.sh
+        - cipherblue-cleanup.sh
+        - authselect-hardening.sh
+        - file-permission-hardening.sh
+        - systemd-services-hardening.sh
+        - selinux-boolean-hardening.sh
+        - suid-hardening.sh
     - type: cipherblue-signing
