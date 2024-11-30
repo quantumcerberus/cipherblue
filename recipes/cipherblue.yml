@@ -508,10 +508,8 @@ modules:
         - zip
     - type: files
       files:
-        - source: system/usr
-          destination: /usr
-        - source: system/etc
-          destination: /etc
+        - source: system
+          destination: /
     - type: script
       scripts:
         - cipherblue-cleanup.sh
