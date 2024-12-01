@@ -57,9 +57,9 @@ rpm-ostree kargs --append-if-missing="$kargs_str" > /dev/null
 # selinux confined users
 semanage login -m -s guest_u -r s0 __default__
 semanage login -m -s guest_u -r s0 root
-semanage login -a -s user_u gdm
-semanage login -a -s unconfined_u anonymous
-semanage login -a -s unconfined_u sysadmin
+semanage login -a -s xguest_u gdm
+semanage login -a -s user_u anonymous
+semanage login -a -s sysadm_u sysadmin
 ```
 
 ### Adding flathub-verified-floss repo in each user
@@ -205,5 +205,6 @@ echo "Hardening complete. Now head to secureblue page to refer other post-instal
 
 ```
 # no bash except for sysadmin
+
 sed -i '/^sysadmin/!s#/bin/bash#/sbin/nologin#g' /etc/passwd
 ```
