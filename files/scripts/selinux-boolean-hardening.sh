@@ -128,7 +128,6 @@ sebools=(
     sslh_can_connect_any_port
     sssd_connect_all_unreserved_ports
     staff_exec_content
-    sysadm_exec_content
     systemd_socket_proxyd_connect_any
     telepathy_connect_all_ports
     telepathy_tcp_connect_generic_network_ports
@@ -137,10 +136,10 @@ sebools=(
     tor_can_onion_services
     unconfined_chrome_sandbox_transition
     unconfined_dyntrans_all
+    unconfined_login
     unconfined_mozilla_plugin_transition
     usbguard_daemon_write_conf
     use_virtualbox
-    user_exec_content
     varnishd_connect_any
     virt_hooks_unconfined
     virt_qemu_ga_read_nonsecurity_files
@@ -154,10 +153,8 @@ sebools=(
     virtqemud_use_execmem
     xend_run_blktap
     xend_run_qemu
-    xguest_connect_network
     xguest_exec_content
     xguest_mount_media
-    xguest_use_bluetooth
     zebra_write_config
     zoneminder_anon_write
     zoneminder_run_sudo
@@ -174,6 +171,7 @@ sebools=(
     deny_ptrace
     secure_mode
     secure_mode_policyload
+    xdm_sysadm_login
 )
 
 for sebool in "${sebools[@]}"; do
