@@ -112,7 +112,6 @@ sebools=(
     samba_share_nfs
     screen_allow_session_sharing
     secadm_exec_content
-    selinuxuser_direct_dri_enabled
     selinuxuser_execheap
     selinuxuser_execmod
     selinuxuser_execstack
