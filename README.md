@@ -38,6 +38,7 @@ kargs=(
     randomize_kstack_offset=on
     reg_file_data_sampling=on
     slab_nomerge
+    slub_debug=ZF
     spec_rstack_overflow=safe-ret
     spec_store_bypass_disable=on
     spectre_bhi=on
