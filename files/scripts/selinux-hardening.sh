@@ -2,6 +2,11 @@
 
 set -oue pipefail
 
+# selinux confined users
+semanage login -m -s user_u -r s0 __default__
+semanage login -m -s guest_u -r s0 root
+semanage login -a -s xguest_u gdm
+
 # SELinux Booleans To Turn Off
 sebools=(
     abrt_anon_write
@@ -176,8 +181,3 @@ sebools=(
 for sebool in "${sebools[@]}"; do
         setsebool -P "$sebool" on > /dev/null
 done
-
-# selinux confined users
-semanage login -m -s user_u -r s0 __default__
-semanage login -m -s guest_u -r s0 root
-semanage login -a -s xguest_u gdm
