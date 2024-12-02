@@ -169,7 +169,7 @@ sebools=(
     deny_bluetooth
     deny_ptrace
     xdm_sysadm_login
-    secure_mode
+    #secure_mode
     secure_mode_policyload
 )
 
