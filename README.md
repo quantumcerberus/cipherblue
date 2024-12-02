@@ -176,12 +176,6 @@ chown root:anonymous '/var/home/anonymous/.bash_history' '/var/home/anonymous/.b
 chown root:sysadmin '/var/home/sysadmin/.bash_history' '/var/home/sysadmin/.bash_logout' '/var/home/sysadmin/.bash_profile' '/var/home/sysadmin/.bashrc' /var/home/sysadmin/.config /var/home/sysadmin/.local /var/home/sysadmin/.local/share
 chmod 040 '/var/home/anonymous/.bash_history' '/var/home/anonymous/.bash_logout' '/var/home/anonymous/.bash_profile' '/var/home/anonymous/.bashrc' '/var/home/sandbox/.bash_history' '/var/home/sandbox/.bash_logout' '/var/home/sandbox/.bash_profile' '/var/home/sandbox/.bashrc' '/var/home/sysadmin/.bash_history' '/var/home/sysadmin/.bash_logout' '/var/home/sysadmin/.bash_profile' '/var/home/sysadmin/.bashrc'
 chmod 050 '/var/home/anonymous/.config' '/var/home/anonymous/.local' '/var/home/anonymous/.local/share' '/var/home/sysadmin/.config' '/var/home/sysadmin/.local' '/var/home/sysadmin/.local/share'
-chown root:anonymous /var/home/anonymous/.local/share/flatpak/overrides -R
-chmod 050 /var/home/anonymous/.local/share/flatpak/overrides
-chmod 040 /var/home/anonymous/.local/share/flatpak/overrides/*
-chown root:sysadmin /var/home/sysadmin/.local/share/flatpak/overrides -R
-chmod 050 /var/home/sysadmin/.local/share/flatpak/overrides
-chmod 040 /var/home/sysadmin/.local/share/flatpak/overrides/*
 
 echo "Home hardening complete."
 
@@ -200,12 +194,4 @@ echo "Hardening complete. Now head to secureblue page to refer other post-instal
 
 ```
 flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
-```
-
-### Final Hardening
-
-```
-# no bash except for sysadmin
-
-sed -i '/^sysadmin/!s#/bin/bash#/sbin/nologin#g' /etc/passwd
 ```
