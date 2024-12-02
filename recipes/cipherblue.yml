@@ -14,6 +14,7 @@ modules:
         - gnome-disk-utility
         - gnome-tweaks
         - hardened-chromium
+        - openssl
         - tlp
         - usbguard
       remove:
