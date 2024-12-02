@@ -515,6 +515,7 @@ modules:
       scripts:
         - cipherblue-cleanup.sh
         - authselect-hardening.sh
+        - kargs-hardening.sh
         - file-permission-hardening.sh
         - systemd-services-hardening.sh
         - selinux-hardening.sh
