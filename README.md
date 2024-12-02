@@ -54,12 +54,23 @@ rpm-ostree kargs --append-if-missing="$kargs_str" > /dev/null
 ### SELinux Hardening
 
 ```
-# selinux confined users
 semanage login -m -s guest_u -r s0 __default__
 semanage login -m -s guest_u -r s0 root
 semanage login -a -s xguest_u gdm
 semanage login -a -s user_u anonymous
 semanage login -a -s sysadm_u sysadmin
+```
+
+### flatpak hardening
+
+```
+flatpak remote-delete --system --force fedora
+flatpak remote-delete --system --force fedora-testing
+flatpak remote-delete --user --force fedora
+flatpak remote-delete --user --force fedora-testing
+flatpak remote-delete --system --force flathub
+flatpak remote-delete --user --force flathub
+flatpak uninstall --delete-data --noninteractive --all
 ```
 
 ### Adding flathub-verified-floss repo in each user
@@ -153,23 +164,6 @@ systemctl enable --now usbguard.service
 
 echo "usbguard enabled."
 
-# flatpak hardening
-flatpak remote-delete --system --force fedora
-flatpak remote-delete --system --force fedora-testing
-flatpak remote-delete --user --force fedora
-flatpak remote-delete --user --force fedora-testing
-flatpak remote-delete --system --force flathub
-flatpak remote-delete --user --force flathub
-flatpak remove --system --noninteractive --all
-chown root:anonymous /var/home/anonymous/.local/share/flatpak/overrides -R
-chmod 050 /var/home/anonymous/.local/share/flatpak/overrides
-chmod 040 /var/home/anonymous/.local/share/flatpak/overrides/*
-chown root:sysadmin /var/home/sysadmin/.local/share/flatpak/overrides -R
-chmod 050 /var/home/sysadmin/.local/share/flatpak/overrides
-chmod 040 /var/home/sysadmin/.local/share/flatpak/overrides/*
-
-echo "flatpak hardening complete."
-
 # Home Hardening
 chmod 700 /home/*
 chown root:anonymous /home/anonymous
@@ -187,6 +181,12 @@ chown root:anonymous '/var/home/anonymous/.bash_history' '/var/home/anonymous/.b
 chown root:sysadmin '/var/home/sysadmin/.bash_history' '/var/home/sysadmin/.bash_logout' '/var/home/sysadmin/.bash_profile' '/var/home/sysadmin/.bashrc' /var/home/sysadmin/.config /var/home/sysadmin/.local /var/home/sysadmin/.local/share
 chmod 040 '/var/home/anonymous/.bash_history' '/var/home/anonymous/.bash_logout' '/var/home/anonymous/.bash_profile' '/var/home/anonymous/.bashrc' '/var/home/sandbox/.bash_history' '/var/home/sandbox/.bash_logout' '/var/home/sandbox/.bash_profile' '/var/home/sandbox/.bashrc' '/var/home/sysadmin/.bash_history' '/var/home/sysadmin/.bash_logout' '/var/home/sysadmin/.bash_profile' '/var/home/sysadmin/.bashrc'
 chmod 050 '/var/home/anonymous/.config' '/var/home/anonymous/.local' '/var/home/anonymous/.local/share' '/var/home/sysadmin/.config' '/var/home/sysadmin/.local' '/var/home/sysadmin/.local/share'
+chown root:anonymous /var/home/anonymous/.local/share/flatpak/overrides -R
+chmod 050 /var/home/anonymous/.local/share/flatpak/overrides
+chmod 040 /var/home/anonymous/.local/share/flatpak/overrides/*
+chown root:sysadmin /var/home/sysadmin/.local/share/flatpak/overrides -R
+chmod 050 /var/home/sysadmin/.local/share/flatpak/overrides
+chmod 040 /var/home/sysadmin/.local/share/flatpak/overrides/*
 
 echo "Home hardening complete."
 
