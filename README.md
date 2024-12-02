@@ -73,12 +73,6 @@ flatpak remote-delete --user --force flathub
 flatpak uninstall --delete-data --noninteractive --all
 ```
 
-### Adding flathub-verified-floss repo in each user
-
-```
-flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
-```
-
 ### Microcode Updates
 
 ```
@@ -199,6 +193,12 @@ passwd -l root
 dconf update
 
 echo "Hardening complete. Now head to secureblue page to refer other post-install scripts for grub-password, audit and other post-install guides, scripts and instructions."
+```
+
+### Adding flathub-verified-floss repo in each user
+
+```
+flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
 ```
 
 ### Final Hardening
