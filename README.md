@@ -117,11 +117,6 @@ fi
 
 echo "fstab hardening complete."
 
-# Firewall Hardening
-systemctl enable --now firewalld
-
-echo "firewall hardening complete."
-
 # Coredump Cleanup
 ulimit -c 0
 systemd-tmpfiles --clean 2> /dev/null
