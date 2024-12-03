@@ -12,8 +12,8 @@ ExecStart=/bin/mount -o remount,nosuid,noexec,nodev /tmp
 ExecStart=/usr/bin/chmod 644 /etc/dconf/db/distro /etc/dconf/db/gdm /etc/dconf/db/ibus /etc/dconf/db/local /etc/dconf/db/site
 ExecStart=/usr/bin/chcon -u system_u /etc/dconf/db/distro /etc/dconf/db/gdm /etc/dconf/db/ibus /etc/dconf/db/local /etc/dconf/db/site
 ExecStart=/usr/sbin/restorecon -Rv /etc/dconf/db/distro /etc/dconf/db/gdm /etc/dconf/db/ibus /etc/dconf/db/local /etc/dconf/db/site
-ExecStart=/bin/mount --bind -o nosuid,exec,nodev /var/home/*/.local/share/flatpak /var/home/*/.local/share/flatpak
-ExecStart=/bin/mount --bind -o nosuid,noexec,nodev /var/home/*/.local/share/flatpak/overrides /var/home/*/.local/share/flatpak/overrides
+ExecStart=/bin/mount --bind -o nosuid,exec,nodev /var/home/anonymous/.local/share/flatpak /var/home/anonymous/.local/share/flatpak
+ExecStart=/bin/mount --bind -o nosuid,noexec,nodev /var/home/anonymous/.local/share/flatpak/overrides /var/home/anonymous/.local/share/flatpak/overrides
 StandardOutput=null
 StandardError=null
 
