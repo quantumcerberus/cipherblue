@@ -14,42 +14,18 @@ sebools=(
     dbadm_exec_content
     domain_kernel_load_modules
     entropyd_use_audio
-    gluster_anon_write
-    gluster_export_all_ro
     gluster_export_all_rw
-    gpg_web_anon_write
     gssd_read_tmp
     guest_exec_content
-    haproxy_connect_any
-    httpd_anon_write
     httpd_builtin_scripting
-    httpd_can_connect_ftp
-    httpd_can_connect_ldap
-    httpd_can_connect_mythtv
-    httpd_can_connect_zabbix
-    httpd_can_network_connect
-    httpd_can_network_connect_cobbler
-    httpd_can_network_connect_db
-    httpd_dontaudit_search_dirs
     httpd_enable_cgi
-    httpd_read_user_content
-    httpd_sys_script_anon_write
-    keepalived_connect_any
     kerberos_enabled
     logadm_exec_content
-    logging_syslogd_append_public_content
-    logging_syslogd_list_non_security_dirs
-    logging_syslogd_run_unconfined
     logging_syslogd_use_tty
     login_console_enabled
-    logrotate_read_inside_containers
-    logwatch_can_network_connect_mail
-    lsmd_plugin_connect_any
     mcelog_exec_scripts
-    minidlna_read_generic_user_content
     mount_anyfile
     mozilla_plugin_can_network_connect
-    mozilla_read_content
     mysql_connect_any
     mysql_connect_http
     named_write_master_zones
