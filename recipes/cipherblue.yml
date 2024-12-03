@@ -496,6 +496,10 @@ modules:
         - wget2-libs
         - wget2-wget
         - words
+        - qemu-char-baum
+        - qemu-system-x86-core
+        - libcacard
+        - xen-libs
         - xcb-util-image
         - xcb-util-keysyms
         - xcb-util-renderutil
