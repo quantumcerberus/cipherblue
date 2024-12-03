@@ -56,9 +56,8 @@ rpm-ostree kargs --append-if-missing="$kargs_str" > /dev/null
 
 ```
 semanage login -m -s guest_u -r s0 root
-semanage login -a -s xguest_u gdm
 semanage login -m -s user_u -r s0 __default__
-semanage login -a -s unconfined_u sysadmin
+semanage login -a -s sysadm_u sysadmin
 ```
 
 ### Flatpak Hardening
@@ -70,7 +69,7 @@ flatpak remote-delete --user --force fedora
 flatpak remote-delete --user --force fedora-testing
 flatpak remote-delete --system --force flathub
 flatpak remote-delete --user --force flathub
-flatpak uninstall --delete-data --system -y
+flatpak uninstall --delete-data --all -y
 ```
 
 ### Microcode Updates
@@ -166,7 +165,7 @@ dconf update
 echo "Hardening complete. Now head to secureblue page to refer other post-install scripts for grub-password, auditing and other post-install guides, scripts and instructions."
 ```
 
-### flathub-verified-floss Repository
+### flathub-verified-floss repository
 
 ```
 flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
