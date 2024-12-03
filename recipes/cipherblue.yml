@@ -255,7 +255,6 @@ modules:
         - gvfs-archive
         - gvfs-fuse
         - gvfs-gphoto2
-        - gvfs-mtp
         - gvfs-smb
         - hplip
         - hplip-common
