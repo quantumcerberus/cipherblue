@@ -55,11 +55,10 @@ rpm-ostree kargs --append-if-missing="$kargs_str" > /dev/null
 ### SELinux Hardening
 
 ```
-semanage login -m -s guest_u -r s0 __default__
 semanage login -m -s guest_u -r s0 root
 semanage login -a -s xguest_u gdm
-semanage login -a -s user_u anonymous
-semanage login -a -s sysadm_u sysadmin
+semanage login -m -s user_u -r s0 __default__
+semanage login -a -s unconfined_u sysadmin
 ```
 
 ### flatpak hardening
@@ -161,21 +160,6 @@ echo "usbguard enabled."
 
 # Home Hardening
 chmod 700 /home/*
-chown root:anonymous /home/anonymous
-chown root:sysadmin /home/sysadmin
-chmod 050 /home/anonymous /home/sysadmin
-rm -rf /var/home/anonymous/.local/share/applications
-rm -rf /var/home/anonymous/.config/autostart
-rm -rf /var/home/anonymous/.config/systemd
-rm -rf /var/home/anonymous/.local/share/systemd
-rm -rf /var/home/sysadmin/.local/share/applications
-rm -rf /var/home/sysadmin/.config/autostart
-rm -rf /var/home/sysadmin/.config/systemd
-rm -rf /var/home/sysadmin/.local/share/systemd
-chown root:anonymous '/var/home/anonymous/.bash_history' '/var/home/anonymous/.bash_logout' '/var/home/anonymous/.bash_profile' '/var/home/anonymous/.bashrc' /var/home/anonymous/.config /var/home/anonymous/.local /var/home/anonymous/.local/share
-chown root:sysadmin '/var/home/sysadmin/.bash_history' '/var/home/sysadmin/.bash_logout' '/var/home/sysadmin/.bash_profile' '/var/home/sysadmin/.bashrc' /var/home/sysadmin/.config /var/home/sysadmin/.local /var/home/sysadmin/.local/share
-chmod 040 '/var/home/anonymous/.bash_history' '/var/home/anonymous/.bash_logout' '/var/home/anonymous/.bash_profile' '/var/home/anonymous/.bashrc' '/var/home/sandbox/.bash_history' '/var/home/sandbox/.bash_logout' '/var/home/sandbox/.bash_profile' '/var/home/sandbox/.bashrc' '/var/home/sysadmin/.bash_history' '/var/home/sysadmin/.bash_logout' '/var/home/sysadmin/.bash_profile' '/var/home/sysadmin/.bashrc'
-chmod 050 '/var/home/anonymous/.config' '/var/home/anonymous/.local' '/var/home/anonymous/.local/share' '/var/home/sysadmin/.config' '/var/home/sysadmin/.local' '/var/home/sysadmin/.local/share'
 
 echo "Home hardening complete."
 
@@ -187,7 +171,7 @@ rfkill unblock wifi
 passwd -l root
 dconf update
 
-echo "Hardening complete. Now head to secureblue page to refer other post-install scripts for grub-password, audit and other post-install guides, scripts and instructions."
+echo "Hardening complete. Now head to secureblue page to refer other post-install scripts for grub-password, auditing and other post-install guides, scripts and instructions."
 ```
 
 ### Adding flathub-verified-floss repo in each user
