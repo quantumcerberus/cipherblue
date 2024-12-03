@@ -52,15 +52,6 @@ kargs_str=$(IFS=" "; echo "${kargs[*]}")
 rpm-ostree kargs --append-if-missing="$kargs_str" > /dev/null
 ```
 
-### SELinux Hardening
-
-```
-semanage login -a -s user_u -r s0 gdm
-semanage login -m -s guest_u -r s0 root
-semanage login -m -s user_u -r s0 __default__
-semanage login -a -s unconfined_u -r s0 sysadmin
-```
-
 ### Flatpak Hardening
 
 ```
@@ -170,4 +161,13 @@ echo "Hardening complete. Now head to secureblue page to refer other post-instal
 
 ```
 flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
+```
+
+### SELinux Hardening (Experimental)
+
+```
+semanage login -a -s user_u -r s0 gdm
+semanage login -m -s guest_u -r s0 root
+semanage login -m -s user_u -r s0 __default__
+semanage login -a -s sysadm_u -r s0 sysadmin
 ```
