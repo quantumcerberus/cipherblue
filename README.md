@@ -65,7 +65,7 @@ flatpak uninstall --delete-data --all -y
 ```
 
 ```
-rm -rf /var/lib/flatpak/*
+rm -rf /var/lib/flatpak/.removed
 ```
 
 ### Microcode Updates
