@@ -166,7 +166,7 @@ flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verifi
 
 ```
 semanage login -a -s user_u -r s0 gdm
-semanage login -m -s guest_u -r s0 root
 semanage login -m -s user_u -r s0 __default__
+semanage login -m -s sysadm_u -r s0 root
 semanage login -a -s sysadm_u -r s0 sysadmin
 ```
