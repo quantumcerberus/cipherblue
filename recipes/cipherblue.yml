@@ -16,7 +16,6 @@ modules:
         - hardened-chromium
         - openssl
         - tlp
-        - usbguard
       remove:
         - ImageMagick
         - ImageMagick-libs
