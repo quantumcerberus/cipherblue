@@ -500,6 +500,9 @@ modules:
         - qemu-system-x86-core
         - libcacard
         - xen-libs
+        - qemu-device-usb-smartcard
+        - qemu-system-x86
+        - qemu-kvm
         - xcb-util-image
         - xcb-util-keysyms
         - xcb-util-renderutil
