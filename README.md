@@ -153,7 +153,10 @@ passwd -l root
 # GNOME Hardening
 dconf update
 
-echo "Hardening complete. Now head to secureblue page to refer other post-install scripts for grub-password, auditing and other post-install guides, scripts and instructions."
+# GRUB Hardening
+grub2-setpassword
+
+echo "Hardening complete. Refer secureblue docs for post install guides, auditing and other hardening"
 ```
 
 ### flathub-verified-floss repository
