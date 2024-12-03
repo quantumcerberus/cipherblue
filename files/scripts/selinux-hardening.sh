@@ -59,8 +59,10 @@ sebools=(
     virtqemud_use_execmem
     xend_run_blktap
     xend_run_qemu
+    xguest_connect_network
     xguest_exec_content
     xguest_mount_media
+    xguest_use_bluetooth
 )
 
 for sebool in "${sebools[@]}"; do
