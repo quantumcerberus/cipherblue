@@ -61,7 +61,7 @@ semanage login -m -s user_u -r s0 __default__
 semanage login -a -s unconfined_u sysadmin
 ```
 
-### flatpak hardening
+### Flatpak Hardening
 
 ```
 flatpak remote-delete --system --force fedora
@@ -108,7 +108,7 @@ The `latest` tag will automatically point to the latest build.
 
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
-```bash
+```
 cosign verify --key cosign.pub ghcr.io/quantumcerberus/cipherblue
 ```
 
@@ -117,7 +117,7 @@ cosign verify --key cosign.pub ghcr.io/quantumcerberus/cipherblue
 ### Additional Hardening
 
 ```
-# fstab hardening
+# Fstab Hardening
 if ! grep -q 'zstd' /etc/fstab; then
     sed -i 's/zstd:1/zstd/g' /etc/fstab
 fi
@@ -132,7 +132,7 @@ fi
 
 echo "fstab hardening complete."
 
-# firewall hardening
+# Firewall Hardening
 systemctl enable --now firewalld
 firewall-cmd --lockdown-on
 
@@ -145,7 +145,7 @@ systemctl daemon-reload
 
 echo "coredump cleanup complete."
 
-# disable system-tracking
+# Disable System-Tracking
 hostnamectl set-hostname host
 new_machine_id="b08dfa6083e7567a1921a715000001fb"
 echo "$new_machine_id" | tee /etc/machine-id > /dev/null
@@ -163,12 +163,14 @@ chmod 700 /home/*
 
 echo "Home hardening complete."
 
-# block wireless devices
+# Block Wireless Devices
 rfkill block all
 rfkill unblock wifi
 
-# lockdown root
+# Lockdown Root
 passwd -l root
+
+# GNOME Hardening
 dconf update
 
 echo "Hardening complete. Now head to secureblue page to refer other post-install scripts for grub-password, auditing and other post-install guides, scripts and instructions."
