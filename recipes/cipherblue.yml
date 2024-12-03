@@ -281,7 +281,7 @@ modules:
         - ipp-usb
         - jbig2dec-libs
         - jomolhari-fonts
-        - jq
+        #- jq
         - julietaula-montserrat-fonts
         - jxl-pixbuf-loader
         - kasumi-unicode
