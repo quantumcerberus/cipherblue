@@ -176,7 +176,7 @@ dconf update
 echo "Hardening complete. Now head to secureblue page to refer other post-install scripts for grub-password, auditing and other post-install guides, scripts and instructions."
 ```
 
-### Adding flathub-verified-floss repo in each user
+### Adding flathub-verified-floss for users
 
 ```
 flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
