@@ -146,6 +146,17 @@ echo "Home hardening complete."
 rfkill block all
 rfkill unblock wifi
 
+# USBGuard Hardening
+echo "Notice: This will generate a policy based on your existing connected USB devices."
+ACTIVE_USERNAME=$(whoami)
+run0 sh -c '
+mkdir -p /var/log/usbguard
+mkdir -p /etc/usbguard
+chmod 755 /etc/usbguard
+usbguard generate-policy > /etc/usbguard/rules.conf
+systemctl enable --now usbguard.service
+usbguard add-user $1
+
 # Lockdown Root
 passwd -l root
 
