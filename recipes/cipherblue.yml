@@ -374,6 +374,7 @@ modules:
         - poppler-utils
         - ppp
         - pptp
+        - ptyxis
         - pulseaudio-utils
         - python-unversioned-command
         - python3-boto3
