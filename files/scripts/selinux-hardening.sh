@@ -50,7 +50,6 @@ sebools=(
     unconfined_chrome_sandbox_transition
     #unconfined_login
     unconfined_mozilla_plugin_transition
-    usbguard_daemon_write_conf
     use_virtualbox
     virt_sandbox_use_all_caps
     virt_sandbox_use_audit
