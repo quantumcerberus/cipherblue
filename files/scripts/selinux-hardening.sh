@@ -4,46 +4,16 @@ set -oue pipefail
 
 # SELinux Booleans To Turn Off
 sebools=(
-    abrt_anon_write
     abrt_handle_event
     abrt_upload_watch_anon_write
     auditadm_exec_content
     boinc_execmem
-    cdrecord_read_content
-    cluster_can_network_connect
-    cobbler_anon_write
-    cobbler_can_network_connect
-    collectd_tcp_network_connect
-    condor_tcp_network_connect
-    conman_can_network
-    conman_use_nfs
-    container_connect_any
-    container_manage_cgroup
-    container_read_certs
-    container_use_cephfs
-    container_use_devices
     container_use_dri_devices
-    container_use_ecryptfs
-    container_use_xserver_devices
     container_user_exec_content
-    cron_can_relabel
-    cron_system_cronjob_use_shares
     cron_userdomain_transition
-    daemons_dump_core
-    daemons_enable_cluster_mode
-    daemons_use_tcp_wrapper
-    daemons_use_tty
     dbadm_exec_content
     domain_kernel_load_modules
     entropyd_use_audio
-    exim_can_connect_db
-    fcron_crond
-    fenced_can_network_connect
-    ftpd_anon_write
-    ftpd_connect_all_unreserved
-    ftpd_connect_db
-    git_session_bind_all_unreserved_ports
-    git_session_users
     gluster_anon_write
     gluster_export_all_ro
     gluster_export_all_rw
@@ -146,7 +116,6 @@ sebools=(
     virt_sandbox_share_apache_content
     virt_sandbox_use_all_caps
     virt_sandbox_use_audit
-    virt_transition_userdomain
     virt_use_nfs
     virt_use_usb
     virtqemud_use_execmem
@@ -154,9 +123,6 @@ sebools=(
     xend_run_qemu
     xguest_exec_content
     xguest_mount_media
-    zebra_write_config
-    zoneminder_anon_write
-    zoneminder_run_sudo
 )
 
 for sebool in "${sebools[@]}"; do
