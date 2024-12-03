@@ -74,7 +74,7 @@ sebools=(
     deny_ptrace
     xdm_sysadm_login
     #secure_mode
-    secure_mode_policyload
+    #secure_mode_policyload
 )
 
 for sebool in "${sebools[@]}"; do
