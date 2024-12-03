@@ -135,7 +135,7 @@ sebools=(
     tor_can_onion_services
     unconfined_chrome_sandbox_transition
     unconfined_dyntrans_all
-    unconfined_login
+    #unconfined_login
     unconfined_mozilla_plugin_transition
     usbguard_daemon_write_conf
     use_virtualbox
