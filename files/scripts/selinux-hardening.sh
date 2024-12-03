@@ -48,7 +48,7 @@ sebools=(
     staff_exec_content
     telepathy_tcp_connect_generic_network_ports
     unconfined_chrome_sandbox_transition
-    #unconfined_login
+    unconfined_login
     unconfined_mozilla_plugin_transition
     usbguard_daemon_write_conf
     use_virtualbox
