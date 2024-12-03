@@ -70,7 +70,7 @@ flatpak remote-delete --user --force fedora
 flatpak remote-delete --user --force fedora-testing
 flatpak remote-delete --system --force flathub
 flatpak remote-delete --user --force flathub
-flatpak uninstall --delete-data --noninteractive --all
+flatpak uninstall --delete-data --noninteractive --system
 ```
 
 ### Microcode Updates
