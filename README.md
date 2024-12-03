@@ -146,17 +146,6 @@ echo "Home hardening complete."
 rfkill block all
 rfkill unblock wifi
 
-# USBGuard Hardening
-echo "Notice: This will generate a policy based on your existing connected USB devices."
-ACTIVE_USERNAME=$(whoami)
-run0 sh -c '
-mkdir -p /var/log/usbguard
-mkdir -p /etc/usbguard
-chmod 755 /etc/usbguard
-usbguard generate-policy > /etc/usbguard/rules.conf
-systemctl enable --now usbguard.service
-usbguard add-user $1
-
 # Lockdown Root
 passwd -l root
 
@@ -175,7 +164,7 @@ echo "Hardening complete. Refer secureblue docs for post install guides, auditin
 flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
 ```
 
-### SELinux Hardening (Experimental)
+### SELinux Confined Users (Experimental)
 
 ```
 semanage login -a -s user_u -r s0 gdm
