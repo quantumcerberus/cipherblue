@@ -64,6 +64,10 @@ flatpak remote-delete --user --force flathub
 flatpak uninstall --delete-data --all -y
 ```
 
+```
+rm -rf /var/lib/flatpak/*
+```
+
 ### Microcode Updates
 
 ```
