@@ -138,11 +138,6 @@ echo "$new_machine_id" | tee /var/lib/dbus/machine-id > /dev/null
 
 echo "system tracking disabled."
 
-# Enable USBGuard
-systemctl enable --now usbguard.service
-
-echo "usbguard enabled."
-
 # Home Hardening
 chmod 700 /home/*
 
