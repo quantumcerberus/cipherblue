@@ -58,7 +58,7 @@ rpm-ostree kargs --append-if-missing="$kargs_str" > /dev/null
 semanage login -a -s user_u -r s0 gdm
 semanage login -m -s guest_u -r s0 root
 semanage login -m -s user_u -r s0 __default__
-semanage login -a -s sysadm_u -r s0 sysadmin
+semanage login -a -s unconfined_u -r s0 sysadmin
 ```
 
 ### Flatpak Hardening
