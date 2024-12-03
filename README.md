@@ -55,10 +55,10 @@ rpm-ostree kargs --append-if-missing="$kargs_str" > /dev/null
 ### SELinux Hardening
 
 ```
-semanage login -a -s user_u -r s0 -c c0 gdm
-semanage login -m -s guest_u -r s0 -c c1 root
-semanage login -m -s user_u -r s1 -c c2 __default__
-semanage login -a -s sysadm_u -r s2 -c c3 sysadmin
+semanage login -a -s user_u -r s0 gdm
+semanage login -m -s guest_u -r s1 root
+semanage login -m -s user_u -r s2 __default__
+semanage login -a -s sysadm_u -r s3 sysadmin
 ```
 
 ### Flatpak Hardening
