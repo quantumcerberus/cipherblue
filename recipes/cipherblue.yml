@@ -350,7 +350,7 @@ modules:
         - mozilla-filesystem
         - mtr
         - net-snmp-libs
-        - netavark
+        #- netavark
         - nilfs-utils
         - nm-connection-editor
         - ntfs-3g
