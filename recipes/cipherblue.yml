@@ -58,8 +58,8 @@ modules:
         - buildah
         #- catatonit
         - cifs-utils-info
-        - conmon
-        - containers-common-extra
+        #- conmon
+        #- containers-common-extra
         - cracklib-dicts
         - crun
         - cups
