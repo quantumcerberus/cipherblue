@@ -498,7 +498,7 @@ modules:
         - words
         - qemu-char-baum
         - qemu-system-x86-core
-        - libcacard
+        #- libcacard
         - xen-libs
         - qemu-device-usb-smartcard
         - qemu-system-x86
