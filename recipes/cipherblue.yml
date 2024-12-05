@@ -370,7 +370,7 @@ modules:
         - pcsc-lite
         - pcsc-lite-ccid
         - pcsc-lite-libs
-        - podman
+        #- podman
         - poppler-cpp
         - poppler-utils
         - ppp
