@@ -51,7 +51,7 @@ modules:
         - bluez-cups
         - bluez-obexd
         - bolt
-        - bootc
+        #- bootc
         - braille-printer-app
         - brlapi
         - brltty
