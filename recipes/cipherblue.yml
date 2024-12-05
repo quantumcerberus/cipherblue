@@ -56,7 +56,7 @@ modules:
         - brlapi
         - brltty
         - buildah
-        - catatonit
+        #- catatonit
         - cifs-utils-info
         - conmon
         - containers-common-extra
