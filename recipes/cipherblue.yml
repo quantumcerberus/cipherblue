@@ -51,15 +51,15 @@ modules:
         - bluez-cups
         - bluez-obexd
         - bolt
-        - bootc
+        #- bootc
         - braille-printer-app
         - brlapi
         - brltty
         - buildah
-        - catatonit
+        #- catatonit
         - cifs-utils-info
-        - conmon
-        - containers-common-extra
+        #- conmon
+        #- containers-common-extra
         - cracklib-dicts
         - crun
         - cups
@@ -350,7 +350,7 @@ modules:
         - mozilla-filesystem
         - mtr
         - net-snmp-libs
-        - netavark
+        #- netavark
         - nilfs-utils
         - nm-connection-editor
         - ntfs-3g
@@ -370,7 +370,7 @@ modules:
         - pcsc-lite
         - pcsc-lite-ccid
         - pcsc-lite-libs
-        - podman
+        #- podman
         - poppler-cpp
         - poppler-utils
         - ppp
@@ -397,7 +397,7 @@ modules:
         - qadwaitadecorations-qt5
         - qemu-guest-agent
         #- qemu-user-static
-        - qemu-user-static-aarch64
+        #- qemu-user-static-aarch64
         #- qemu-user-static-alpha
         #- qemu-user-static-arm
         #- qemu-user-static-cris
@@ -496,6 +496,13 @@ modules:
         - wget2-libs
         - wget2-wget
         - words
+        #- qemu-char-baum
+        #- qemu-system-x86-core
+        #- libcacard
+        #- xen-libs
+        #- qemu-device-usb-smartcard
+        #- qemu-system-x86
+        #- qemu-kvm
         - xcb-util-image
         - xcb-util-keysyms
         - xcb-util-renderutil
