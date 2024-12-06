@@ -15,5 +15,3 @@ cd ../..
 
 semodule -i ./selinux/user_namespace/grant_userns.cil
 semodule -i ./selinux/user_namespace/harden_userns.cil
-
-rpm-ostree uninstall selinux-policy-devel
