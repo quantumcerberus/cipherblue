@@ -150,7 +150,7 @@ dconf update
 # GRUB Hardening
 grub2-setpassword
 
-echo "Hardening complete. Refer secureblue docs for post install guides, auditing and other hardening"
+echo "Hardening complete."
 ```
 
 ### flathub-verified-floss repository
