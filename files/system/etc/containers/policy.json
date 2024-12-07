@@ -6,7 +6,7 @@
   ],
   "transports": {
     "docker": {
-      "ghcr.io/quantumcerberus": [
+      "ghcr.io/quantumcerberus/cipherblue:latest": [
         {
           "type": "sigstoreSigned",
           "keyPath": "/usr/etc/pki/containers/quantumcerberus.pub",
