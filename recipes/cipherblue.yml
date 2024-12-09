@@ -12,7 +12,6 @@ modules:
         - https://copr.fedorainfracloud.org/coprs/secureblue/hardened-chromium/repo/fedora-%OS_VERSION%/secureblue-hardened-chromium-fedora-%OS_VERSION%.repo
       install:
         - gnome-disk-utility
-        - gnome-terminal
         - gnome-tweaks
         - hardened-chromium
         - openssl
@@ -375,7 +374,6 @@ modules:
         - poppler-utils
         - ppp
         - pptp
-        - ptyxis
         - pulseaudio-utils
         - python-unversioned-command
         - python3-boto3
