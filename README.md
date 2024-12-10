@@ -156,7 +156,7 @@ echo "Hardening complete."
 ### flathub-verified-floss repository
 
 ```
-flatpak remote-add --if-not-exists --user --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists --system --subset=verified_floss flathub-verified-floss https://flathub.org/repo/flathub.flatpakrepo
 ```
 
 ### SELinux Confined Users (Experimental)
