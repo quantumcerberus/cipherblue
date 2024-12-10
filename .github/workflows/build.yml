@@ -4,7 +4,7 @@ on:
     - cron: "30 1 * * *"
   workflow_dispatch:
 jobs:
-  bluebuild:
+  cipherbuild:
     name: Build Cipherblue
     runs-on: ubuntu-latest
     permissions:
@@ -18,7 +18,7 @@ jobs:
           - cipherblue.yml
     steps:
       - name: Build Cipherblue
-        uses: quantumcerberus/cipher-build@main
+        uses: quantumcerberus/cipherbuild@main
         with:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
