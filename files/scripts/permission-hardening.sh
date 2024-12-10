@@ -13,5 +13,3 @@ sed -i 's/^HOME_MODE/#HOME_MODE/g' /etc/login.defs
 sed -i 's/umask 022/umask 077/g' /etc/bashrc
 sed -i 's/\s+nullok//g' /etc/pam.d/system-auth
 sed -i 's@DefaultZone=FedoraWorkstation@DefaultZone=drop@g' /etc/firewalld/firewalld.conf
-
-groupdel wheel
