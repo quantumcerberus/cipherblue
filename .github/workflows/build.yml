@@ -18,7 +18,7 @@ jobs:
           - cipherblue.yml
     steps:
       - name: Build Cipherblue
-        uses: blue-build/github-action@33ee8cc4011b0d47666ea7026d08bb5b941ac90c
+        uses: quantumcerberus/build-cipherblue@main
         with:
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
