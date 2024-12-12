@@ -4,11 +4,7 @@
   </a>
 </p>
 
-<p align="center">
-  
-  [![cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
-  
-</p>
+[![cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
 ## CipherBlue Pre-Install Scripts
 
