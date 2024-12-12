@@ -6,7 +6,7 @@
   </a>
 </p>
 
-<h1 align="center">secureblue</h1>
+<h1 align="center">CipherBlue</h1>
 
 [![build-cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
