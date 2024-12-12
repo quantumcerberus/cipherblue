@@ -1,5 +1,13 @@
 # CipherBlue &nbsp; 
 
+<p align="center">
+  <a href="https://github.com/secureblue/secureblue">
+    <img src="https://github.com/secureblue/secureblue/assets/129108030/292e0ecc-50b8-4de5-a11a-bfe292489f6c" href="https://github.com/secureblue/secureblue" width=180 />
+  </a>
+</p>
+
+<h1 align="center">secureblue</h1>
+
 [![build-cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
 ## CipherBlue Pre-Install Scripts
