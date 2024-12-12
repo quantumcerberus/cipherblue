@@ -3,6 +3,7 @@
     <img src="https://github.com/quantumcerberus/cipherblue/blob/main/cipherblue.png" href="https://github.com/quantumcerberus/cipherblue" width=500 />
   </a>
 </p>
+
 [![build-cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
 ## CipherBlue Pre-Install Scripts
