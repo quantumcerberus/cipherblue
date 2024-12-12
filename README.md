@@ -6,7 +6,7 @@
 
 <h1 align="center">CipherBlue</h1>
 
-<h1 align="center">[![build-cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)</h1>
+[![build-cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
 ## CipherBlue Pre-Install Scripts
 
