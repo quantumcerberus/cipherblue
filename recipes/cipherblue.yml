@@ -302,9 +302,9 @@ modules:
         - libdc1394
         - libdnf5
         - libdnf5-cli
-        - liberation-mono-fonts
-        - liberation-sans-fonts
-        - liberation-serif-fonts
+        #- liberation-mono-fonts
+        #- liberation-sans-fonts
+        #- liberation-serif-fonts
         - libfprint
         - libgee
         - libgphoto2
