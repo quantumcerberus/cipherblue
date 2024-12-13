@@ -60,13 +60,12 @@ for service in "${services[@]}"; do
         systemctl mask "$service" > /dev/null
 done
 
-systemctl --global enable cipher-user-maintenance
-
 services=(
     fstrim.timer
     rpm-ostreed-automatic.timer
     cipher-capabilities
     cipher-cleaner
+    cipher-flatpak
     cipher-remount
     tlp
 )
