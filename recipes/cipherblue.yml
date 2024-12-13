@@ -307,16 +307,16 @@ modules:
         #- liberation-serif-fonts
         - libfprint
         - libgee
-        - libgphoto2
-        - libgs
+        #- libgphoto2
+        #- libgs
         - libhangul
-        - libheif
-        - libiec61883
-        - libijs
-        - libimagequant
+        #- libheif
+        #- libiec61883
+        #- libijs
+        #- libimagequant
         - liblouisutdml-utils
         - libmbim-utils
-        - libmediaart
+        #- libmediaart
         - libmspack
         - libpaper
         - libpcap
