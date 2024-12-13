@@ -16,6 +16,7 @@ modules:
         - hardened-chromium
         - openssl
         - tlp
+        - wine
       remove:
         - ImageMagick
         - ImageMagick-libs
