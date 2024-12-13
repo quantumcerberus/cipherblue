@@ -16,7 +16,6 @@ modules:
         - hardened-chromium
         - openssl
         - tlp
-        - wine
       remove:
         - ImageMagick
         - ImageMagick-libs
@@ -166,7 +165,7 @@ modules:
         - fprintd
         - fprintd-pam
         - freerdp-libs
-        - fuse
+        #- fuse
         - fuse-overlayfs
         - gamemode
         - gawk-all-langpacks
@@ -302,21 +301,21 @@ modules:
         - libdc1394
         - libdnf5
         - libdnf5-cli
-        #- liberation-mono-fonts
-        #- liberation-sans-fonts
-        #- liberation-serif-fonts
+        - liberation-mono-fonts
+        - liberation-sans-fonts
+        - liberation-serif-fonts
         - libfprint
         - libgee
-        #- libgphoto2
-        #- libgs
+        - libgphoto2
+        - libgs
         - libhangul
-        #- libheif
-        #- libiec61883
-        #- libijs
-        #- libimagequant
+        - libheif
+        - libiec61883
+        - libijs
+        - libimagequant
         - liblouisutdml-utils
         - libmbim-utils
-        #- libmediaart
+        - libmediaart
         - libmspack
         - libpaper
         - libpcap
@@ -396,7 +395,7 @@ modules:
         - qadwaitadecorations-qt5
         - qemu-guest-agent
         #- qemu-user-static
-        #- qemu-user-static-aarch64
+        - qemu-user-static-aarch64
         #- qemu-user-static-alpha
         #- qemu-user-static-arm
         #- qemu-user-static-cris
