@@ -125,10 +125,11 @@ To rebase an existing atomic Fedora installation to the latest build:
 
 The `latest` tag will automatically point to the latest build.
 
+
 ## CipherBlue Post-Install Scripts
 
+### Fstab Hardening
 ```
-# Fstab Hardening
 if ! grep -q 'zstd' /etc/fstab; then
     sed -i 's/zstd:1/zstd/g' /etc/fstab
 fi
@@ -136,19 +137,20 @@ fi
 FILE="/etc/fstab"
 
 if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev' "$FILE"; then
-    # Modify lines that contain /var/lib/flatpak
     sed -i -e '/\/var\/lib\/flatpak/ s/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,nodev/' \
            -e '/\/var\/lib\/flatpak/ s/shortname=winnt/shortname=winnt,nosuid,nodev/' \
            -e '/\/var\/lib\/flatpak/ s/defaults/defaults,nosuid,nodev/' \
-           # Modify other lines
            -e '/\/var\/lib\/flatpak/! s/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev/' \
            -e '/\/var\/lib\/flatpak/! s/shortname=winnt/shortname=winnt,nosuid,noexec,nodev/' \
            -e '/\/var\/lib\/flatpak/! s/defaults/defaults,nosuid,noexec,nodev/' "$FILE"
 fi
 
 echo "fstab hardening complete."
+```
 
 # Coredump Cleanup
+
+```
 ulimit -c 0
 systemd-tmpfiles --clean 2> /dev/null
 systemctl daemon-reload
