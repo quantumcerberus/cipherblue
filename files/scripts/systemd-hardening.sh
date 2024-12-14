@@ -50,6 +50,8 @@ services=(
     sshd
     sssd
     sssd-kcm
+    emergency.service
+    emergency.target
     tailscaled
     vboxservice.service
     vmtoolsd.service
