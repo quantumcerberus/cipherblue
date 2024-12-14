@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/quantumcerberus/cipherblue">
-    <img src="https://github.com/quantumcerberus/cipherblue/blob/main/files/system/usr/share/plymouth/themes/spinner/watermark.png" href="https://github.com/quantumcerberus/cipherblue" width=180 />
+    <img src="https://github.com/quantumcerberus/cipherblue/blob/main/files/system/usr/share/plymouth/themes/spinner/watermark.png" href="https://github.com/quantumcerberus/cipherblue" width=200 />
   </a>
 </p>
 
