@@ -136,9 +136,14 @@ fi
 FILE="/etc/fstab"
 
 if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev' "$FILE"; then
-    sed -i -e 's/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev/' \
-           -e 's/shortname=winnt/shortname=winnt,nosuid,noexec,nodev/' \
-           -e 's/defaults/defaults,nosuid,noexec,nodev/' "$FILE"
+    # Modify lines that contain /var/lib/flatpak
+    sed -i -e '/\/var\/lib\/flatpak/ s/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,nodev/' \
+           -e '/\/var\/lib\/flatpak/ s/shortname=winnt/shortname=winnt,nosuid,nodev/' \
+           -e '/\/var\/lib\/flatpak/ s/defaults/defaults,nosuid,nodev/' \
+           # Modify other lines
+           -e '/\/var\/lib\/flatpak/! s/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev/' \
+           -e '/\/var\/lib\/flatpak/! s/shortname=winnt/shortname=winnt,nosuid,noexec,nodev/' \
+           -e '/\/var\/lib\/flatpak/! s/defaults/defaults,nosuid,noexec,nodev/' "$FILE"
 fi
 
 echo "fstab hardening complete."
