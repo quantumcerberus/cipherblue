@@ -21,13 +21,6 @@ Separate Partitions:
 - /var/lib/flatpak = 20 GB
 - /var/home = As much space left
 
-- tmpfs   /dev    tmpfs   nosuid,noexec,noatime   0 0
-- tmpfs   /proc    proc   nosuid,noexec,nodev,noatime   0 0
-- tmpfs   /sys    sysfs   nosuid,noexec,nodev,noatime   0 0
-- tmpfs   /run    tmpfs   nosuid,noexec,nodev,noatime   0 0
-- tmpfs   /tmp    tmpfs   nosuid,noexec,nodev,noatime   0 0
-- tmpfs   /etc    tmpfs   nosuid,noexec,nodev,noatime   0 0
-
 ## CipherBlue Pre-Install Scripts
 
 ### Kernel Parameter Hardening
@@ -164,7 +157,7 @@ fi
 echo "fstab hardening complete."
 ```
 
-# Coredump Cleanup
+### Coredump Cleanup
 
 ```
 ulimit -c 0
