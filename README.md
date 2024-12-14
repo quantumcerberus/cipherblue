@@ -6,6 +6,18 @@
 
 [![cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
+## Fedora Installation
+
+Separate Partitions for:
+
+/boot/efi = 500 MB
+/boot = 1.0 GB
+/ = 15 GB
+/var = 1 GB
+/var/lib/flatpak = 20 GB
+/var/log = 1 GB
+/var/home = As much space as left
+
 ## CipherBlue Pre-Install Scripts
 
 ### Kernel Parameter Hardening
