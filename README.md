@@ -130,19 +130,16 @@ The `latest` tag will automatically point to the latest build.
 
 ### Fstab Hardening
 ```
-# Ensure 'zstd' is formatted correctly in /etc/fstab
 if ! grep -q 'zstd' /etc/fstab; then
     sed -i 's/zstd:1/zstd/g' /etc/fstab
 fi
 
-# Add tmpfs lines to /etc/fstab if not already present
 FILE="/etc/fstab"
 
-# Check if each tmpfs mount is missing and add it if necessary
 tmpfs_lines=(
     "tmpfs   /dev    tmpfs   nosuid,noexec,noatime   0 0"
-    "tmpfs   /proc   proc   nosuid,noexec,nodev,noatime   0 0"
-    "tmpfs   /sys    sysfs   nosuid,noexec,nodev,noatime   0 0"
+    "proc   /proc   proc   nosuid,noexec,nodev,noatime   0 0"
+    "sysfs   /sys    sysfs   nosuid,noexec,nodev,noatime   0 0"
     "tmpfs   /run    tmpfs   nosuid,noexec,nodev,noatime   0 0"
     "tmpfs   /tmp    tmpfs   nosuid,noexec,nodev,noatime   0 0"
     "tmpfs   /etc    tmpfs   nosuid,noexec,nodev,noatime   0 0"
