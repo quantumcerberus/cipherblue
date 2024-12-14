@@ -4,19 +4,21 @@
   </a>
 </p>
 
+<h1 align="center">cipherblue</h1>
+
 [![cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
 ## Fedora Installation
 
-### Separate Partitions for:
+Separate Partitions:
 
-#### /boot/efi = 500 MB
-#### /boot = 1.0 GB
-#### / = 15 GB
-#### /var = 1 GB
-#### /var/log = 1 GB
-#### /var/lib/flatpak = 20 GB
-#### /var/home = As much space left
+- /boot/efi = 500 MB
+- /boot = 1.0 GB
+- / = 15 GB
+- /var = 1 GB
+- /var/log = 1 GB
+- /var/lib/flatpak = 20 GB
+- /var/home = As much space left
 
 ## CipherBlue Pre-Install Scripts
 
