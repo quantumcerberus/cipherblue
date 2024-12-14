@@ -4,7 +4,8 @@
   </a>
 </p>
 
-<h1 align="center">cipherblue</h1>
+<h1 align="center">Cipherblue</h1>
+
 
 [![cipherblue](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml/badge.svg)](https://github.com/quantumcerberus/cipherblue/actions/workflows/build.yml)
 
