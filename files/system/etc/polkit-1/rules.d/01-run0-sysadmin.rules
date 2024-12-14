@@ -1,7 +1,0 @@
-polkit.addRule(function(action, subject) {
-    if ((action.id == "org.freedesktop.systemd1.manage-units") &&
-         subject.active == true && subject.local == true &&
-         subject.isInGroup("sysadmin")) {
-         return polkit.Result.AUTH_SELF;
-    }
-});
