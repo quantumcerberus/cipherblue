@@ -138,7 +138,7 @@ FILE="/etc/fstab"
 
 tmpfs_lines=(
     "tmpfs   /dev    tmpfs   nosuid,noexec,noatime   0 0"
-    "proc   /proc   proc   nosuid,noexec,nodev,noatime   0 0"
+    "proc   /proc    proc   nosuid,noexec,nodev,noatime   0 0"
     "sysfs   /sys    sysfs   nosuid,noexec,nodev,noatime   0 0"
     "tmpfs   /run    tmpfs   nosuid,noexec,nodev,noatime   0 0"
     "tmpfs   /tmp    tmpfs   nosuid,noexec,nodev,noatime   0 0"
