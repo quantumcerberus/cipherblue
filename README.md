@@ -144,14 +144,11 @@ for line in "${tmpfs_lines[@]}"; do
     fi
 done
 
-# Ensure 'x-systemd.device-timeout=0,nosuid,noexec,nodev,noatime' is added correctly
-if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev,noatime' "$FILE"; then
-    sed -i -e '/\/var\/lib\/flatpak/ s/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,nodev,noatime/' \
-           -e '/\/var\/lib\/flatpak/ s/shortname=winnt/shortname=winnt,nosuid,nodev,noatime/' \
-           -e '/\/var\/lib\/flatpak/ s/defaults/defaults,nosuid,nodev,noatime/' \
-           -e '/\/var\/lib\/flatpak/! s/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev,noatime/' \
-           -e '/\/var\/lib\/flatpak/! s/shortname=winnt/shortname=winnt,nosuid,noexec,nodev,noatime/' \
-           -e '/\/var\/lib\/flatpak/! s/defaults/defaults,nosuid,noexec,nodev,noatime/' "$FILE"
+if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev' "$FILE"; then
+    sed -i -e 's/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev/' \
+           -e 's/shortname=winnt/shortname=winnt,nosuid,noexec,nodev/' \
+           -e 's/compress=zstd:1/compress=zstd:1,nosuid,noexec,nodev/' \
+           -e 's/defaults/defaults,nosuid,noexec,nodev/' "$FILE"
 fi
 
 echo "fstab hardening complete."
