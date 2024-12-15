@@ -45,6 +45,7 @@ kargs=(
     l1tf=full,force
     lockdown=confidentiality
     loglevel=0
+    kvm-intel.vmentry_l1d_flush=always
     mds=full,nosmt
     mitigations=auto,nosmt
     module.sig_enforce=1
