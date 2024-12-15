@@ -139,7 +139,7 @@ fi
 sed -i '/\/var\/lib\/flatpak/ s/,noexec//g' /etc/fstab
 ```
 
-### Coredump Cleanup
+### Other Hardening
 
 ```
 ulimit -c 0
@@ -155,11 +155,6 @@ echo "$new_machine_id" | tee /etc/machine-id > /dev/null
 echo "$new_machine_id" | tee /var/lib/dbus/machine-id > /dev/null
 
 echo "system tracking disabled."
-
-# Home Hardening
-chmod 700 /home/*
-
-echo "Home hardening complete."
 
 # Block Wireless Devices
 rfkill block all
