@@ -137,8 +137,6 @@ if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev,noatime' "$FILE"; t
 fi
 
 sed -i '/\/var\/lib\/flatpak/ s/,noexec//g' /etc/fstab
-
-echo "fstab hardening complete."
 ```
 
 ### Coredump Cleanup
