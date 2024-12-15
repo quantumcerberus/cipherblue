@@ -123,34 +123,20 @@ The `latest` tag will automatically point to the latest build.
 ## CipherBlue Post-Install Scripts
 
 ### Fstab Hardening
+
 ```
-if ! grep -q 'zstd' /etc/fstab; then
-    sed -i 's/zstd:1/zstd/g' /etc/fstab
-fi
+sed -i 's/zstd:1/zstd/g' /etc/fstab
 
 FILE="/etc/fstab"
 
-tmpfs_lines=(
-    "tmpfs   /dev    tmpfs   nosuid,noexec,noatime   0 0"
-    "proc   /proc    proc   nosuid,noexec,nodev,noatime   0 0"
-    "sysfs   /sys    sysfs   nosuid,noexec,nodev,noatime   0 0"
-    "tmpfs   /run    tmpfs   nosuid,noexec,nodev,noatime   0 0"
-    "tmpfs   /tmp    tmpfs   nosuid,noexec,nodev,noatime   0 0"
-    "tmpfs   /etc    tmpfs   nosuid,noexec,nodev,noatime   0 0"
-)
-
-for line in "${tmpfs_lines[@]}"; do
-    if ! grep -q "$line" "$FILE"; then
-        echo "$line" >> "$FILE"
-    fi
-done
-
-if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev' "$FILE"; then
-    sed -i -e 's/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev/' \
-           -e 's/shortname=winnt/shortname=winnt,nosuid,noexec,nodev/' \
-           -e 's/compress=zstd:1/compress=zstd:1,nosuid,noexec,nodev/' \
-           -e 's/defaults/defaults,nosuid,noexec,nodev/' "$FILE"
+if ! grep -q 'x-systemd.device-timeout=0,nosuid,noexec,nodev,noatime' "$FILE"; then
+    sed -i -e 's/x-systemd.device-timeout=0/x-systemd.device-timeout=0,nosuid,noexec,nodev,noatime/' \
+           -e 's/shortname=winnt/shortname=winnt,nosuid,noexec,nodev,noatime/' \
+           -e 's/compress=zstd/compress=zstd,nosuid,noexec,nodev,noatime/' \
+           -e 's/defaults/defaults,nosuid,noexec,nodev,noatime/' "$FILE"
 fi
+
+sed -i '/\/var\/lib\/flatpak/ s/,noexec//g' /etc/fstab
 
 echo "fstab hardening complete."
 ```
