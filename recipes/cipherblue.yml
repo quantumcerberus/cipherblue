@@ -487,6 +487,24 @@ modules:
         - yelp-libs
         - yelp-xsl
         - zip
+    - type: default-flatpaks
+      notify: true
+      system:
+        repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        repo-name: flathub
+        repo-title: "Flathub (system-wide)
+        install:
+          - com.belmoussaoui.Authenticator
+          - com.bitwarden.desktop
+          - com.github.tchx84.Flatseal
+          - io.freetubeapp.Freetube
+          - io.github.celluloid_player.Celluloid
+          - io.github.flattool.Warehouse
+          - org.gnome.Boxes
+          - org.gnome.TextEditor
+          - org.libreoffice.LibreOffice
+        remove:
+          - org.gnome.eog
     - type: files
       files:
         - source: system
