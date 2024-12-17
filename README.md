@@ -99,7 +99,9 @@ fwupdmgr update
 ## Installation
 
 To rebase an existing atomic Fedora installation to the latest build:
-
+  ```
+rpm-ostree upgrade
+  ```
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/quantumcerberus/cipherblue:latest
