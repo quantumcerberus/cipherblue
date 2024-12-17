@@ -498,6 +498,6 @@ modules:
         - permission-hardening.sh
         - hardenuserns.sh
         - systemd-hardening.sh
-        #- selinux-hardening.sh
+        - selinux-hardening.sh
         - suid-hardening.sh
     - type: cipherblue-signing
