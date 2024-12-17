@@ -13,3 +13,5 @@ sed -i 's/^HOME_MODE/#HOME_MODE/g' /etc/login.defs
 sed -i 's/umask 022/umask 077/g' /etc/bashrc
 sed -i 's/\s+nullok//g' /etc/pam.d/system-auth
 sed -i 's@DefaultZone=FedoraWorkstation@DefaultZone=drop@g' /etc/firewalld/firewalld.conf
+sed -i 's/nosuid,nodev/nosuid,noexec,nodev/' /usr/lib/systemd/system/dev-hugepages.mount
+sed -i 's/nosuid,nodev/nosuid,noexec,nodev/' /usr/lib/systemd/system/tmp.mount
