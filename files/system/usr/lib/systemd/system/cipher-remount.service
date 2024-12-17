@@ -8,7 +8,6 @@ After=local-fs.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/mount --make-private -o remount,nosuid,noexec,nodev,noatime /dev/shm
-ExecStart=/usr/bin/mount --make-private -o remount,nosuid,noexec,nodev,noatime /dev/hugepages
 ExecStart=/usr/bin/mount --make-private -o remount,nosuid,noexec,nodev,noatime /tmp
 ExecStart=/usr/bin/mount --make-private -o remount,nosuid,noexec,nodev,noatime /run
 ExecStart=/usr/bin/mount --make-private -o remount,nosuid,noexec,noatime /dev
