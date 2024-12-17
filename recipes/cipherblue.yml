@@ -490,7 +490,7 @@ modules:
     - type: default-flatpaks
       notify: true
       system:
-        repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo --subset=verified_floss
         repo-name: flathub
         repo-title: "flathub-verified-floss"
         install:
