@@ -99,9 +99,14 @@ fwupdmgr update
 ## Installation
 
 To rebase an existing atomic Fedora installation to the latest build:
- -
+
+- First upgrade to latest fedora version:
   ```
-rpm-ostree upgrade
+  rpm-ostree upgrade
+  ```
+- Reboot to complete the upgrade:
+  ```
+  systemctl reboot
   ```
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
