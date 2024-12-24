@@ -150,6 +150,7 @@ sed -i '/\/var\/lib\/flatpak/ s/,noexec//g' /etc/fstab
 ### Other Hardening
 
 ```
+# Cleanup Coredump
 ulimit -c 0
 systemd-tmpfiles --clean 2> /dev/null
 systemctl daemon-reload
