@@ -139,7 +139,7 @@ modules:
         - dhcp-client
         - dhcp-common
         - djvulibre-libs
-        - dnf5
+        #- dnf5
         - dnf5-plugins
         - dnsmasq
         - elfutils-debuginfod-client
