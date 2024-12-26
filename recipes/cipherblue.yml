@@ -299,8 +299,8 @@ modules:
         - libcaca
         - libcupsfilters
         - libdc1394
-        - libdnf5
-        - libdnf5-cli
+        #- libdnf5
+        #- libdnf5-cli
         - liberation-mono-fonts
         - liberation-sans-fonts
         - liberation-serif-fonts
