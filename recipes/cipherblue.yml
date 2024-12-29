@@ -69,7 +69,7 @@ modules:
         - cups-filters
         - cups-filters-driverless
         - cups-ipptool
-        - dbus-glib
+        #- dbus-glib
         - default-fonts-am
         - default-fonts-ar
         - default-fonts-as
