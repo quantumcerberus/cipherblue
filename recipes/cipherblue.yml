@@ -420,7 +420,7 @@ modules:
         - sane-backends-drivers-cameras
         - sane-backends-drivers-scanners
         - sane-backends-libs
-        - sdbus-cpp
+        #- sdbus-cpp
         - sil-padauk-fonts
         - slirp4netns
         - sos
