@@ -16,7 +16,7 @@ jobs:
       matrix:
         recipe:
           - cipherblue-main.yml
-          - cipherblue-nvidia.yml
+          #- cipherblue-nvidia.yml
     steps:
       - name: Build Cipherblue
         uses: blue-build/github-action@33ee8cc4011b0d47666ea7026d08bb5b941ac90c
