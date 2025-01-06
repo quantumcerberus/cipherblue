@@ -1,4 +1,4 @@
-name: cipherblue
+name: cipherblue-main
 description: "A Security & Privacy Focused Operating System For Desktops"
 base-image: ghcr.io/secureblue/silverblue-nvidia-open-hardened
 image-version: latest
