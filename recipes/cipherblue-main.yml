@@ -8,8 +8,6 @@ modules:
         - httpsmirrors.sh
         - cipherblue-cleanup.sh
     - type: rpm-ostree
-      repos: 
-        - https://copr.fedorainfracloud.org/coprs/secureblue/hardened-chromium/repo/fedora-%OS_VERSION%/secureblue-hardened-chromium-fedora-%OS_VERSION%.repo
       install:
         - tlp
       remove:
