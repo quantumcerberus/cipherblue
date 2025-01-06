@@ -65,9 +65,7 @@ done
 services=(
     fstrim.timer
     rpm-ostreed-automatic.timer
-    cipher-capabilities
     cipher-cleaner
-    cipher-flatpak
     cipher-remount
     tlp
 )
