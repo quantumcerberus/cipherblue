@@ -1,6 +1,6 @@
-name: cipherblue
+name: cipherblue-nvidia
 description: "A Security & Privacy Focused Operating System For Desktops"
-base-image: quay.io/fedora/fedora-silverblue
+base-image: ghcr.io/secureblue/silverblue-nvidia-open-hardened
 image-version: latest
 modules:
     - type: script
@@ -11,10 +11,6 @@ modules:
       repos: 
         - https://copr.fedorainfracloud.org/coprs/secureblue/hardened-chromium/repo/fedora-%OS_VERSION%/secureblue-hardened-chromium-fedora-%OS_VERSION%.repo
       install:
-        - gnome-disk-utility
-        - gnome-tweaks
-        - hardened-chromium
-        - openssl
         - tlp
       remove:
         - ImageMagick
@@ -50,15 +46,11 @@ modules:
         - bluez-cups
         - bluez-obexd
         - bolt
-        #- bootc
         - braille-printer-app
         - brlapi
         - brltty
         - buildah
-        #- catatonit
         - cifs-utils-info
-        #- conmon
-        #- containers-common-extra
         - cracklib-dicts
         - crun
         - cups
@@ -139,8 +131,6 @@ modules:
         - dhcp-client
         - dhcp-common
         - djvulibre-libs
-        #- dnf5
-        - dnf5-plugins
         - dnsmasq
         - elfutils-debuginfod-client
         - epiphany-runtime
@@ -279,7 +269,6 @@ modules:
         - ipp-usb
         - jbig2dec-libs
         - jomolhari-fonts
-        #- jq
         - julietaula-montserrat-fonts
         - jxl-pixbuf-loader
         - kasumi-unicode
@@ -299,8 +288,6 @@ modules:
         - libcaca
         - libcupsfilters
         - libdc1394
-        #- libdnf5
-        #- libdnf5-cli
         - liberation-mono-fonts
         - liberation-sans-fonts
         - liberation-serif-fonts
@@ -349,7 +336,6 @@ modules:
         - mozilla-filesystem
         - mtr
         - net-snmp-libs
-        #- netavark
         - nilfs-utils
         - nm-connection-editor
         - ntfs-3g
@@ -369,7 +355,6 @@ modules:
         - pcsc-lite
         - pcsc-lite-ccid
         - pcsc-lite-libs
-        #- podman
         - poppler-cpp
         - poppler-utils
         - ppp
@@ -420,7 +405,6 @@ modules:
         - sane-backends-drivers-cameras
         - sane-backends-drivers-scanners
         - sane-backends-libs
-        #- sdbus-cpp
         - sil-padauk-fonts
         - slirp4netns
         - sos
@@ -496,7 +480,6 @@ modules:
         - cipherblue-cleanup.sh
         - authselect-hardening.sh
         - permission-hardening.sh
-        - hardenuserns.sh
         - systemd-hardening.sh
         - selinux-hardening.sh
         - suid-hardening.sh
