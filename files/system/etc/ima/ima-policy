@@ -1,0 +1,5 @@
+# files/system/etc/ima/ima-policy
+# Measure all executable files
+measure func=BPRM_CHECK mask=MAY_EXEC
+# Appraise all files in /bin and /sbin
+appraise fsmagic=0x9fa0 directories=/bin,/sbin recursive=1
