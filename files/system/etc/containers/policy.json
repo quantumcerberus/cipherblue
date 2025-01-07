@@ -6,7 +6,7 @@
   ],
   "transports": {
     "docker": {
-      "ghcr.io/quantumcerberus/cipherblue:latest": [
+      "ghcr.io/quantumcerberus/cipherblue-nvidia:latest": [
         {
           "type": "sigstoreSigned",
           "keyPath": "/usr/etc/pki/containers/quantumcerberus.pub",
