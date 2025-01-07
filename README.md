@@ -13,12 +13,12 @@
 
 Separate Partitions:
 
-- /boot/efi = 500 MB
-- /boot = 1.0 GB
-- / = 15 GB
-- /var = 1 GB
-- /var/log = 1 GB
-- /var/lib/flatpak = 10 GB
+- /boot/efi = 500 MB = 477 MiB
+- /boot = 1.0 GB = 954 MiB
+- / = 15 GB = 13.97 GiB
+- /var = 1 GB = 970 MiB
+- /var/log = 1 GB = 970 MiB
+- /var/lib/flatpak = 10 GB = 9.32 GiB
 - /var/home = As much space left
 
 ## CipherBlue Pre-Install Scripts
