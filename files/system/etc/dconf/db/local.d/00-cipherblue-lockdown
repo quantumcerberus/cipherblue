@@ -6,6 +6,7 @@ disable-show-password=true
 user-administration-disabled=true
 
 [org/gnome/shell]
+favorite-apps = ['chromium-browser.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Ptyxis.desktop', 'com.github.tchx84.Flatseal.desktop']
 enabled-extensions=['']
 development-tools=false
 allow-extension-installation=false
