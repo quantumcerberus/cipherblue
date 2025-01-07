@@ -2,7 +2,6 @@
 
 set -oue pipefail
 
-chmod 700 /usr/bin/cipher-capabilities
 chmod 755 /etc/profile.d/cipherblue_umask.sh
 echo "" > /etc/securetty
 echo 'UriSchemes=file;https' | tee -a /etc/fwupd/fwupd.conf
