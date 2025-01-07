@@ -20,11 +20,6 @@ mkdir -p "$CONTAINER_DIR/registries.d"
 mkdir -p "/usr/etc/pki/containers"
 mkdir -p "/etc/pki/containers"
 
-# Copy policy.json if it does not exist
-if ! [ -f "$CONTAINER_DIR/policy.json" ]; then
-    cp "$MODULE_DIRECTORY/signing/policy.json" "$CONTAINER_DIR/policy.json"
-fi
-
 # Copy public key files
 cp "/usr/etc/pki/containers/$IMAGE_NAME.pub" "/usr/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
 cp "/usr/etc/pki/containers/$IMAGE_NAME.pub" "/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
