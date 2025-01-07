@@ -33,9 +33,6 @@ kargs=(
     extra_latent_entropy
     gather_data_sampling=force
     ia32_emulation=0
-    ima_policy=tcb
-    ima_appraise=enforce
-    ima_hash=sha256
     init_on_alloc=1
     init_on_free=1
     intel_iommu=on
