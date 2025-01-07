@@ -172,7 +172,6 @@ modules:
         - gnome-software
         - gnome-user-docs
         - google-droid-sans-fonts
-        - google-noto-sans-arabic-vf-fonts
         - google-noto-sans-armenian-vf-fonts
         - google-noto-sans-bengali-vf-fonts
         - google-noto-sans-canadian-aboriginal-vf-fonts
@@ -263,11 +262,8 @@ modules:
         - langpacks-en
         - langpacks-fonts-en
         - langtable
-        - leptonica
         - libXpm
-        - libavc1394
         - libcupsfilters
-        - libdc1394
         - liberation-mono-fonts
         - liberation-sans-fonts
         - liberation-serif-fonts
@@ -276,8 +272,6 @@ modules:
         - libgphoto2
         - libgs
         - libhangul
-        - libheif
-        - libiec61883
         - libijs
         - libimagequant
         - liblouisutdml-utils
@@ -355,7 +349,7 @@ modules:
         - qemu-guest-agent
         - qemu-user-static-aarch64
         - qpdf-libs
-        - qrencode-libs
+        - firewall-config
         - qt-settings
         - qt5-filesystem
         - qt5-qtbase
@@ -421,6 +415,7 @@ modules:
         - usb_modeswitch
         - usb_modeswitch-data
         - vazirmatn-vf-fonts
+        - vim-enhanced
         - vim-common
         - vim-data
         - vim-minimal
@@ -431,20 +426,14 @@ modules:
         - wget2-libs
         - wget2-wget
         - words
-        - xcb-util-image
-        - xcb-util-keysyms
-        - xcb-util-renderutil
-        - xcb-util-wm
         - xdriinfo
         - xfsprogs
         - yajl
         - yelp-libs
         - yelp-xsl
         - zip
-        - qt6-qtbase-gui
-        - python3-pyqt6
-        - gstreamer1-plugins-good-qt6
-        - qt6-qtspeech-speechd
+        - setroubleshoot
+        - setools-gui
     - type: files
       files:
         - source: system
