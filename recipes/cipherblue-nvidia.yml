@@ -3,6 +3,12 @@ description: "A Security & Privacy Focused Operating System For Desktops"
 base-image: quay.io/fedora/fedora-silverblue
 image-version: latest
 modules:
+    - type: containerfile
+      snippets:
+        - COPY --from=ghcr.io/ublue-os/akmods-nvidia-open:main-41 /rpms /tmp/rpms
+        - RUN find /tmp/rpms
+        - RUN sed -i '0,/enabled=0/{s/enabled=0/enabled=1\npriority=90/}' /etc/yum.repos.d/negativo17-fedora-nvidia.repo   
+        - RUN rpm-ostree install /tmp/rpms/kmods/kmod-nvidia*.rpm nvidia-driver nvidia-modprobe
     - type: script
       scripts:
         - httpsmirrors.sh
@@ -14,7 +20,6 @@ modules:
         - gnome-disk-utility
         - gnome-tweaks
         - hardened-chromium
-        - openssl
         - tlp
       remove:
         - ImageMagick
