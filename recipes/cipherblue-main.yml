@@ -500,3 +500,4 @@ modules:
         - selinux-hardening.sh
         - suid-hardening.sh
     - type: cipherblue-signing
+      source: local
