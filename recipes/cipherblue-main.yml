@@ -153,6 +153,7 @@ modules:
         - fedora-chromium-config
         - fedora-chromium-config-gnome
         - fedora-flathub-remote
+        - fedora-logos
         - fedora-logos-httpd
         - fedora-repos-archive
         - fedora-third-party
