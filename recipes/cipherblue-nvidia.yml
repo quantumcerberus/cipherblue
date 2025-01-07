@@ -3,6 +3,10 @@ description: "A Security & Privacy Focused Operating System For Desktops"
 base-image: quay.io/fedora/fedora-silverblue
 image-version: latest
 modules:
+    - type: script
+      scripts:
+        - httpsmirrors.sh
+        - cipherblue-cleanup.sh
     - type: containerfile
       snippets:
         - COPY --from=ghcr.io/ublue-os/akmods-nvidia-open:main-41 /rpms /tmp/rpms
@@ -507,3 +511,4 @@ modules:
         - selinux-hardening.sh
         - suid-hardening.sh
     - type: cipherblue-signing
+      source: local
