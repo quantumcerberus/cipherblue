@@ -149,7 +149,7 @@ modules:
         - dhcp-client
         - dhcp-common
         - djvulibre-libs
-        #- dnf5
+        - dnf5
         - dnf5-plugins
         - dnsmasq
         - elfutils-debuginfod-client
@@ -289,7 +289,7 @@ modules:
         - ipp-usb
         - jbig2dec-libs
         - jomolhari-fonts
-        #- jq
+        - jq
         - julietaula-montserrat-fonts
         - jxl-pixbuf-loader
         - kasumi-unicode
@@ -309,8 +309,8 @@ modules:
         - libcaca
         - libcupsfilters
         - libdc1394
-        #- libdnf5
-        #- libdnf5-cli
+        - libdnf5
+        - libdnf5-cli
         - liberation-mono-fonts
         - liberation-sans-fonts
         - liberation-serif-fonts
@@ -430,7 +430,7 @@ modules:
         - sane-backends-drivers-cameras
         - sane-backends-drivers-scanners
         - sane-backends-libs
-        #- sdbus-cpp
+        - sdbus-cpp
         - sil-padauk-fonts
         - slirp4netns
         - sos
