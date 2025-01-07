@@ -130,7 +130,7 @@ modules:
         - dhcp-common
         - djvulibre-libs
         - dnsmasq
-        - elfutils-debuginfod-client
+        #- elfutils-debuginfod-client
         - epiphany-runtime
         - espeak-ng
         - evince-djvu
@@ -172,7 +172,6 @@ modules:
         - gnome-software
         - gnome-user-docs
         - google-droid-sans-fonts
-        - google-noto-naskh-arabic-vf-fonts
         - google-noto-sans-arabic-vf-fonts
         - google-noto-sans-armenian-vf-fonts
         - google-noto-sans-bengali-vf-fonts
@@ -267,9 +266,6 @@ modules:
         - leptonica
         - libXpm
         - libavc1394
-        - libavdevice-free
-        - libavfilter-free
-        - libcaca
         - libcupsfilters
         - libdc1394
         - liberation-mono-fonts
@@ -331,9 +327,9 @@ modules:
         - openvpn
         - orca
         - paktype-naskh-basic-fonts
-        - pcsc-lite
-        - pcsc-lite-ccid
-        - pcsc-lite-libs
+        #- pcsc-lite
+        #- pcsc-lite-ccid
+        #- pcsc-lite-libs
         - poppler-cpp
         - poppler-utils
         - ppp
@@ -342,7 +338,6 @@ modules:
         - python-unversioned-command
         - python3-boto3
         - python3-brlapi
-        - python3-click
         - python3-cups
         - python3-enchant
         - python3-langtable
@@ -373,9 +368,9 @@ modules:
         - qt5-qtx11extras
         - qt5-qtxmlpatterns
         - realmd
+        - python3-libreport
         - rit-meera-new-fonts
         - rit-rachana-fonts
-        - rpm-build-libs
         - rsync
         - rygel
         - samba-client
@@ -403,7 +398,6 @@ modules:
         - systemd-container
         - tar
         - tcl
-        - tesseract-libs
         - texlive-lib
         - thermald
         - toolbox
@@ -427,6 +421,7 @@ modules:
         - usb_modeswitch
         - usb_modeswitch-data
         - vazirmatn-vf-fonts
+        - vim-common
         - vim-data
         - vim-minimal
         - virtualbox-guest-additions
@@ -446,6 +441,10 @@ modules:
         - yelp-libs
         - yelp-xsl
         - zip
+        - qt6-qtbase-gui
+        - python3-pyqt6
+        - gstreamer1-plugins-good-qt6
+        - qt6-qtspeech-speechd
     - type: files
       files:
         - source: system
