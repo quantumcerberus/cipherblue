@@ -140,6 +140,7 @@ modules:
         - dhcp-common
         - djvulibre-libs
         - dnf5
+        - dnf-data
         - dnf5-plugins
         - dnsmasq
         - elfutils-debuginfod-client
@@ -277,6 +278,7 @@ modules:
         - ibus-libpinyin
         - ibus-m17n
         - ibus-typing-booster
+        - ima-evm-utils-libs
         - ipp-usb
         - jbig2dec-libs
         - jomolhari-fonts
@@ -297,14 +299,17 @@ modules:
         - libavdevice-free
         - libavfilter-free
         - libcaca
+        - libcomps
         - libcupsfilters
         - libdc1394
+        - libdnf
         - libdnf5
         - libdnf5-cli
         - liberation-mono-fonts
         - liberation-sans-fonts
         - liberation-serif-fonts
         - libfprint
+        - libfsverity
         - libgee
         - libgphoto2
         - libgs
@@ -339,8 +344,10 @@ modules:
         - lvm2
         - lvm2-libs
         - m17n-lib
+        - m4
         - madan-fonts
         - mailcap
+        - make
         - malcontent-control
         - malcontent-ui-libs
         - mod_dnssd
@@ -370,6 +377,7 @@ modules:
         - pcsc-lite-ccid
         - pcsc-lite-libs
         #- podman
+        - policycoreutils-devel
         - poppler-cpp
         - poppler-utils
         - ppp
@@ -380,8 +388,12 @@ modules:
         - python3-brlapi
         - python3-click
         - python3-cups
+        - python3-dnf
         - python3-enchant
+        - python3-hawkey
         - python3-langtable
+        - python3-libcomps
+        - python3-libdnf
         - python3-louis
         - python3-olefile
         - python3-packaging
@@ -390,6 +402,7 @@ modules:
         - python3-pyatspi
         - python3-regex
         - python3-requests
+        - python3-rpm
         - python3-speechd
         - python3-urllib3+socks
         - qadwaitadecorations-qt5
@@ -412,6 +425,7 @@ modules:
         - rit-meera-new-fonts
         - rit-rachana-fonts
         - rpm-build-libs
+        - rpm-sign-libs
         - rsync
         - rygel
         - samba-client
@@ -421,6 +435,7 @@ modules:
         - sane-backends-drivers-scanners
         - sane-backends-libs
         - sdbus-cpp
+        - selinux-policy-devel
         - sil-padauk-fonts
         - slirp4netns
         - sos
