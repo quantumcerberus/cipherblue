@@ -7,13 +7,14 @@ modules:
       scripts:
         - httpsmirrors.sh
         - cipherblue-cleanup.sh
+        - hardenuserns.sh
     - type: containerfile
       snippets:
         - COPY --from=ghcr.io/ublue-os/akmods-nvidia-open:main-41 /rpms /tmp/rpms
         - RUN find /tmp/rpms
         - RUN curl -L https://negativo17.org/repos/fedora-nvidia.repo -o /etc/yum.repos.d/negativo17-fedora-nvidia.repo
         - RUN sed -i '0,/enabled=0/{s/enabled=0/enabled=1\npriority=90/}' /etc/yum.repos.d/negativo17-fedora-nvidia.repo   
-        - RUN rpm-ostree install /tmp/rpms/kmods/kmod-nvidia*.rpm nvidia-driver nvidia-modprobe
+        - RUN dnf5 install --setopt=install_weak_deps=False /tmp/rpms/kmods/kmod-nvidia*.rpm nvidia-driver nvidia-modprobe
     - type: script
       scripts:
         - httpsmirrors.sh
@@ -506,7 +507,6 @@ modules:
         - cipherblue-cleanup.sh
         - authselect-hardening.sh
         - permission-hardening.sh
-        - hardenuserns.sh
         - systemd-hardening.sh
         - selinux-hardening.sh
         - suid-hardening.sh
