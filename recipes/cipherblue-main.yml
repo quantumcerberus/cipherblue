@@ -7,6 +7,7 @@ modules:
       scripts:
         - httpsmirrors.sh
         - cipherblue-cleanup.sh
+        - hardenuserns.sh
     - type: rpm-ostree
       repos: 
         - https://copr.fedorainfracloud.org/coprs/secureblue/hardened-chromium/repo/fedora-%OS_VERSION%/secureblue-hardened-chromium-fedora-%OS_VERSION%.repo
@@ -495,7 +496,6 @@ modules:
         - cipherblue-cleanup.sh
         - authselect-hardening.sh
         - permission-hardening.sh
-        - hardenuserns.sh
         - systemd-hardening.sh
         - selinux-hardening.sh
         - suid-hardening.sh
