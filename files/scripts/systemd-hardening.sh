@@ -15,6 +15,7 @@ services=(
     avahi-daemon.service
     avahi-daemon.socket
     cups
+    cups-browsed
     geoclue
     gssproxy
     httpd
