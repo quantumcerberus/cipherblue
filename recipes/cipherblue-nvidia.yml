@@ -14,7 +14,7 @@ modules:
         - RUN find /tmp/rpms
         - RUN curl -L https://negativo17.org/repos/fedora-nvidia.repo -o /etc/yum.repos.d/negativo17-fedora-nvidia.repo
         - RUN sed -i '0,/enabled=0/{s/enabled=0/enabled=1\npriority=90/}' /etc/yum.repos.d/negativo17-fedora-nvidia.repo   
-        - RUN dnf5 install --setopt=install_weak_deps=False /tmp/rpms/kmods/kmod-nvidia*.rpm nvidia-driver nvidia-modprobe
+        - RUN dnf5 install --setopt=install_weak_deps=False /tmp/rpms/kmods/kmod-nvidia*.rpm nvidia-driver nvidia-modprobe -y
     - type: script
       scripts:
         - httpsmirrors.sh
