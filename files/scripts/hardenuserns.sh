@@ -2,7 +2,7 @@
 
 set -oue pipefail
 
-dnf5 install --setopt=install_weak_deps=False selinux-policy-devel
+dnf5 install --setopt=install_weak_deps=False selinux-policy-devel -y
 
 cd ./selinux/chromium
 bash chromium.sh
