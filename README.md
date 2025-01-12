@@ -21,7 +21,36 @@ Separate Partitions:
 - /var/lib/flatpak = 10 GB = 9.32 GiB
 - /var/home = As much space left
 
-## CipherBlue Pre-Install Scripts
+## Installation
+
+To rebase an existing atomic Fedora installation to the latest build:
+
+- First upgrade to latest fedora version:
+  ```
+  rpm-ostree upgrade
+  ```
+- Reboot to complete the upgrade:
+  ```
+  systemctl reboot
+  ```
+- First rebase to the unsigned image, to get the proper signing keys and policies installed:
+  ```
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/quantumcerberus/cipherblue-nvidia:latest
+  ```
+- Reboot to complete the rebase:
+  ```
+  systemctl reboot
+  ```
+- Then rebase to the signed image, like so:
+  ```
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/quantumcerberus/cipherblue-nvidia:latest
+  ```
+- Reboot again to complete the installation
+  ```
+  systemctl reboot
+  ```
+
+The `latest` tag will automatically point to the latest build.
 
 ### Kernel Parameter Hardening
 
@@ -95,40 +124,6 @@ fwupdmgr refresh --force
 fwupdmgr get-updates
 fwupdmgr update
 ```
-
-## Installation
-
-To rebase an existing atomic Fedora installation to the latest build:
-
-- First upgrade to latest fedora version:
-  ```
-  rpm-ostree upgrade
-  ```
-- Reboot to complete the upgrade:
-  ```
-  systemctl reboot
-  ```
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/quantumcerberus/cipherblue-nvidia:latest
-  ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/quantumcerberus/cipherblue-nvidia:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
-
-The `latest` tag will automatically point to the latest build.
-
-
-## CipherBlue Post-Install Scripts
 
 ### Fstab Hardening
 
