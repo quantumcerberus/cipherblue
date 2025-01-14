@@ -14,7 +14,7 @@ modules:
       install:
         - gnome-disk-utility
         - gnome-tweaks
-        - hardened-chromium
+        - trivalent
         - tlp
       remove:
         - ImageMagick
