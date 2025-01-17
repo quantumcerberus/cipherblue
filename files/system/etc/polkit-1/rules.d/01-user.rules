@@ -5,6 +5,7 @@ polkit.addRule(function(action, subject) {
          action.id == "org.freedesktop.NetworkManager.wifi.scan" ||
          action.id == "org.freedesktop.NetworkManager.network-control" ||
          action.id == "org.freedesktop.NetworkManager.settings.modify.own" ||
+         action.id == "org.freedesktop.Flatpak.app-update" ||
 	 action.id == "org.freedesktop.udisks2.filesystem-mount" ||
 	 action.id == "org.freedesktop.udisks2.modify-device" ||
 	 action.id == "org.freedesktop.udisks2.eject-media" ||
