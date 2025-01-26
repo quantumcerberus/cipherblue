@@ -19,7 +19,7 @@ Separate Partitions:
 - /var = 1 GB = 970 MiB
 - /var/log = 1 GB = 970 MiB
 - /var/lib/flatpak = 10 GB = 9.32 GiB
-- /var/home = As much space left
+- /var/home = As much as left
 
 ## Installation
 
