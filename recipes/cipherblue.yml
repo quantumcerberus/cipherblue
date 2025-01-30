@@ -1,4 +1,4 @@
-name: cipherblue-main
+name: cipherblue
 description: "A Security & Privacy Focused Operating System For Desktops"
 base-image: quay.io/fedora/fedora-silverblue
 image-version: latest
