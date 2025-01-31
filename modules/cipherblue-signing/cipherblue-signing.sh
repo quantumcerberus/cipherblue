@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Tell build process to exit if there are any errors.
 set -euo pipefail
 
 CONTAINER_DIR="/usr/etc/containers"
@@ -36,12 +35,11 @@ if ! [ -d "/etc/pki/containers" ]; then
     mkdir -p "/etc/pki/containers"
 fi
 
-# covering our bases here since /usr/etc is technically unsupported, reevaluate once bootc is the primary deployment tool
 cp "/etc/pki/containers/$IMAGE_NAME.pub" "/usr/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
 cp "/etc/pki/containers/$IMAGE_NAME.pub" "/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
 rm "/etc/pki/containers/$IMAGE_NAME.pub"
 
-sed -i "s ghcr.io/IMAGENAME $IMAGE_REGISTRY g" "$MODULE_DIRECTORY/secureblue-signing/registry-config.yaml"
-cp "$MODULE_DIRECTORY/secureblue-signing/registry-config.yaml" "$CONTAINER_DIR/registries.d/$IMAGE_REGISTRY_TITLE.yaml"
-cp "$MODULE_DIRECTORY/secureblue-signing/registry-config.yaml" "$ETC_CONTAINER_DIR/registries.d/$IMAGE_REGISTRY_TITLE.yaml"
-rm "$MODULE_DIRECTORY/secureblue-signing/registry-config.yaml"
+sed -i "s ghcr.io/IMAGENAME $IMAGE_REGISTRY g" "$MODULE_DIRECTORY/cipherblue-signing/registry-config.yaml"
+cp "$MODULE_DIRECTORY/cipherblue-signing/registry-config.yaml" "$CONTAINER_DIR/registries.d/$IMAGE_REGISTRY_TITLE.yaml"
+cp "$MODULE_DIRECTORY/cipherblue-signing/registry-config.yaml" "$ETC_CONTAINER_DIR/registries.d/$IMAGE_REGISTRY_TITLE.yaml"
+rm "$MODULE_DIRECTORY/cipherblue-signing/registry-config.yaml"
