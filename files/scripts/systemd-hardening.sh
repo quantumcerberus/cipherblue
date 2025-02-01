@@ -68,7 +68,7 @@ services=(
     rpm-ostreed-automatic.timer
     cipher-capabilities
     cipher-cleaner
-    cipher-flatpak
+    cipher-updater
     cipher-remount
     tlp
 )
