@@ -506,6 +506,9 @@ modules:
       files:
         - source: system
           destination: /
+    - type: gschema-overrides
+      include:
+        - zz1-cipherblue.gschema.override
     - type: script
       scripts:
         - cipherblue-cleanup.sh
