@@ -1,7 +1,7 @@
 name: build-cipherblue
 on:
   schedule:
-    - cron: "00 8 * * *"
+    - cron: "30 4 * * *"
   workflow_dispatch:
 jobs:
   bluebuild:
