@@ -314,7 +314,7 @@ modules:
         - libgphoto2
         - libgs
         - libhangul
-        - libheif
+        #- libheif
         - libiec61883
         - libijs
         - libimagequant
