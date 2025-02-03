@@ -95,17 +95,6 @@ allow trivalent_t audio_home_t:dir { add_name read remove_name watch write searc
 allow trivalent_t audio_home_t:file { create getattr open read rename setattr unlink write };
 allow trivalent_t audio_home_t:lnk_file { create getattr open read rename setattr unlink write };
 
-
-
-# xwayland/nvidia
-xserver_exec(trivalent_t)
-dev_rw_xserver_misc(trivalent_t)
-dev_map_xserver_misc(trivalent_t)
-allow trivalent_t xserver_misc_device_t:chr_file { getattr ioctl map open read write };
-xserver_stream_connect_xdm(trivalent_t)
-xserver_stream_connect(trivalent_t)
-xserver_user_x_domain_template(trivalent, trivalent_t, user_tmpfs_t)
-
 files_list_home(trivalent_t)
 files_search_home(trivalent_t)
 files_read_usr_files(trivalent_t)
@@ -245,13 +234,6 @@ allow trivalent_script_t chrome_sandbox_home_t:lnk_file read;
 allow trivalent_script_t trivalent_home_t:dir { add_name create read remove_name rmdir write getattr open rename search };
 allow trivalent_script_t trivalent_home_t:file { append create execute getattr ioctl lock map open read rename unlink write };
 allow trivalent_script_t trivalent_home_t:lnk_file { create read unlink };
-
-
-# xwayland/nvidia
-xserver_exec(trivalent_script_t)
-dev_rw_xserver_misc(trivalent_script_t)
-dev_map_xserver_misc(trivalent_script_t)
-allow trivalent_script_t xserver_misc_device_t:chr_file { getattr ioctl map open read write };
 
 gnome_manage_data(trivalent_script_t)
 gnome_manage_home_config(trivalent_script_t)
