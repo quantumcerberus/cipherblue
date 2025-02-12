@@ -1,9 +1,9 @@
-[org.gnome.desktop.lockdown]
-disable-command-line=true
-disable-printing=true
-disable-print-setup=true
-disable-show-password=true
-user-administration-disabled=true
+#[org.gnome.desktop.lockdown]
+#disable-command-line=true
+#disable-printing=true
+#disable-print-setup=true
+#disable-show-password=true
+#user-administration-disabled=true
 
 [org.gnome.shell]
 favorite-apps = ['trivalent.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Ptyxis.desktop', 'com.github.tchx84.Flatseal.desktop']
@@ -23,11 +23,11 @@ autorun-never=true
 [org.gnome.desktop.wm.preferences]
 button-layout='appmenu:minimize,maximize,close'
 
-[org.gnome.desktop.interface]
-color-scheme='prefer-dark'
+#[org.gnome.desktop.interface]
+#color-scheme='prefer-dark'
 
-[org.gnome.system.location]
-enabled=false
+#[org.gnome.system.location]
+#enabled=false
 
 [org.gnome.desktop.privacy]
 remember-recent-files=false
@@ -37,17 +37,17 @@ report-technical-problems=false
 send-software-usage-stats=false
 remember-app-usage=false
 
-[org.gnome.desktop.remote-desktop.rdp]
-enable=false
+#[org.gnome.desktop.remote-desktop.rdp]
+#enable=false
 
-[org.gnome.desktop.remote-desktop.vnc]
-enable=false
+#[org.gnome.desktop.remote-desktop.vnc]
+#enable=false
 
-[org.gnome.desktop.peripherals.touchpad]
-click-method='areas'
-disable-while-typing=false
-tap-to-click=true
-to-finger-scrolling-enabled=false
+#[org.gnome.desktop.peripherals.touchpad]
+#click-method='areas'
+#disable-while-typing=false
+#tap-to-click=true
+#to-finger-scrolling-enabled=false
 
-[org.gnome.mutter]
-center-new-windows=true
+#[org.gnome.mutter]
+#center-new-windows=true
