@@ -28,6 +28,7 @@ modules:
         - dnf5-plugins
         - libdnf5
         - libdnf5-cli
+        - sdbus-cpp
     - type: files
       files:
         - source: system
