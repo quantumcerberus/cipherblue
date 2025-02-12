@@ -26,6 +26,8 @@ modules:
         - dnf5
         - dnf-data
         - dnf5-plugins
+        - libdnf5
+        - libdnf5-cli
     - type: files
       files:
         - source: system
