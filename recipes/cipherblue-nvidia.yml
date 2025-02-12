@@ -5,15 +5,10 @@ image-version: latest
 modules:
     - type: script
       scripts:
-        - package-hardening.sh
-    - type: rpm-ostree
-      install:
-        - openh264
-    - type: script
-      scripts:
         - httpsmirrors.sh
         - cipherblue-cleanup.sh
         - hardenuserns.sh
+        - package-hardening.sh
     - type: rpm-ostree
       repos: 
         - https://copr.fedorainfracloud.org/coprs/secureblue/trivalent/repo/fedora-%OS_VERSION%/secureblue-trivalent-fedora-%OS_VERSION%.repo
