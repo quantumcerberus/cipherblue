@@ -6,9 +6,9 @@ modules:
     - type: script
       scripts:
         - httpsmirrors.sh
+        - package-hardening.sh
         - cipherblue-cleanup.sh
         - hardenuserns.sh
-        - package-hardening.sh
     - type: rpm-ostree
       repos:
         - https://repo.secureblue.dev/secureblue.repo
