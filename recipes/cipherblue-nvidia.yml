@@ -10,8 +10,8 @@ modules:
         - hardenuserns.sh
         - package-hardening.sh
     - type: rpm-ostree
-      repos: 
-        - https://copr.fedorainfracloud.org/coprs/secureblue/trivalent/repo/fedora-%OS_VERSION%/secureblue-trivalent-fedora-%OS_VERSION%.repo
+      repos:
+        - https://repo.secureblue.dev/secureblue.repo
       install:
         - gnome-disk-utility
         - gnome-tweaks
@@ -28,9 +28,6 @@ modules:
       files:
         - source: system
           destination: /
-    - type: gschema-overrides
-      include:
-        - zz1-cipherblue.gschema.override
     - type: script
       scripts:
         - cipherblue-cleanup.sh
