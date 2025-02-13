@@ -3,12 +3,6 @@ description: "A Security & Privacy Focused Operating System For Desktops"
 base-image: quay.io/fedora/fedora-silverblue
 image-version: latest
 modules:
-    - type: script
-      scripts:
-        - httpsmirrors.sh
-        - package-hardening.sh
-        - cipherblue-cleanup.sh
-        - hardenuserns.sh
     - type: rpm-ostree
       repos:
         - https://repo.secureblue.dev/secureblue.repo
@@ -17,6 +11,13 @@ modules:
         - gnome-tweaks
         - trivalent
         - tlp
+    - type: script
+      scripts:
+        - httpsmirrors.sh
+        - package-hardening.sh
+        - cipherblue-cleanup.sh
+        - hardenuserns.sh
+    - type: rpm-ostree
       remove:
         - dnf5
         #- dnf-data
