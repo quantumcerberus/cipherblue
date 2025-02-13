@@ -19,7 +19,7 @@ modules:
         - tlp
       remove:
         - dnf5
-        - dnf-data
+        #- dnf-data
         - dnf5-plugins
         - libdnf5
         - libdnf5-cli
