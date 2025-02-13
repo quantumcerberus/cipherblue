@@ -16,6 +16,7 @@ modules:
         - libdnf5
         - libdnf5-cli
         - sdbus-cpp
+        - fedora-logos
     - type: files
       files:
         - source: system
