@@ -8,7 +8,7 @@ After=local-fs.target
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/mount --make-private -o remount,nosuid,noexec,nodev,noatime /dev/shm
-ExecStart=/usr/bin/mount --make-private -o remount,nosuid,exec,nodev,noatime /var/home/anonymous
+ExecStart=/usr/bin/mount --bind -o nosuid,exec,nodev,noatime /var/home/anonymous /var/home/anonymous
 ExecStart=/usr/bin/chmod 644 /etc/dconf/db/distro /etc/dconf/db/gdm /etc/dconf/db/ibus /etc/dconf/db/local /etc/dconf/db/site
 ExecStart=/usr/bin/chcon -u system_u /etc/dconf/db/distro /etc/dconf/db/gdm /etc/dconf/db/ibus /etc/dconf/db/local /etc/dconf/db/site
 ExecStart=/usr/sbin/restorecon -Rv /etc/dconf/db/distro /etc/dconf/db/gdm /etc/dconf/db/ibus /etc/dconf/db/local /etc/dconf/db/site
