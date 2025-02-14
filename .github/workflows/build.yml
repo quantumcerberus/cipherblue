@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - cipherblue-nvidia.yml
+          - cipherblue.yml
     steps:
       - name: Build Cipherblue
         uses: blue-build/github-action@4d8b4df657ec923574611eec6fd7e959416c47f0
