@@ -12,7 +12,9 @@ modules:
     - type: rpm-ostree
       remove:
         - dnf5
-        - dnf5-plugins
+        - crun
+        - buildah
+        - yajl
         - libdnf5
         - libdnf5-cli
         - sdbus-cpp
