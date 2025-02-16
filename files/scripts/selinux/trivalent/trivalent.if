@@ -35,13 +35,13 @@ interface(`trivalent_domtrans',`
 ## </param>
 #
 interface(`trivalent_run',`
-	gen_require(`
-		type trivalent_t;
-        attribute_role trivalent_roles;
-	')
+        gen_require(`
+                type trivalent_t;
+                attribute_role trivalent_roles;
+        ')
 
-    trivalent_domtrans($1)
-    roleattribute $2 trivalent_roles;
+        trivalent_domtrans($1)
+        roleattribute $2 trivalent_roles;
 ')
 
 
@@ -106,8 +106,6 @@ interface(`trivalent_filetrans_home_content',`
                 type trivalent_home_t;
         ')
 
-        optional_policy(`
-			gnome_config_filetrans($1, trivalent_home_t, dir, "trivalent")
-			gnome_cache_filetrans($1, trivalent_home_t, dir, "trivalent")
-        ')
+        gnome_config_filetrans($1, trivalent_home_t, dir, "trivalent")
+        gnome_cache_filetrans($1, trivalent_home_t, dir, "trivalent")
 ')
