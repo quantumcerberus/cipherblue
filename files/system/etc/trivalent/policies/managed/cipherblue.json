@@ -14,6 +14,11 @@
 	"DefaultFileSystemReadGuardSetting": 2,
 	"DefaultFileSystemWriteGuardSetting": 2,
 	"DefaultInsecureContentSetting": 2,
+	"DefaultJavaScriptJitSetting": 2,
+	"JavaScriptJitAllowedForSites": [
+					   "web.whatsapp.com",
+					   "app.standardnotes.com"
+					],
 	"DefaultNotificationsSetting": 2,
 	"DefaultGeolocationSetting": 2,
 	"DefaultSensorsSetting": 2,
