@@ -81,13 +81,13 @@ interface(`trivalent_script_domtrans',`
 ## </param>
 #
 interface(`trivalent_script_run',`
-	gen_require(`
-		type trivalent_script_t;
-        attribute_role trivalent_script_roles;
-	')
+        gen_require(`
+                type trivalent_script_t;
+                attribute_role trivalent_script_roles;
+        ')
 
-    trivalent_script_domtrans($1)
-    roleattribute $2 trivalent_script_roles;
+        trivalent_script_domtrans($1)
+        roleattribute $2 trivalent_script_roles;
 ')
 
 ########################################
