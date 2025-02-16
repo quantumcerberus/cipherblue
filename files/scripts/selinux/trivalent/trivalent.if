@@ -48,7 +48,7 @@ interface(`trivalent_run',`
 
 ########################################
 ## <summary>
-##	Execute trivalent script in the trivalent domain.
+##	Execute trivalent script in the trivalent script domain.
 ## </summary>
 ## <param name="domain">
 ## <summary>
