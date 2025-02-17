@@ -1,32 +1,35 @@
 policy_module(trivalent, 1.0.0)
 
+
 ########################################
 #
 # Declarations
 #
 
-# Define custom role attributes
+# trivalent executable
 attribute_role trivalent_roles;
-attribute_role trivalent_script_roles;
-
-# Define roles for trivalent and trivalent script
-role trivalent_t types { trivalent_home_t trivalent_exec_t };
-role trivalent_script_t types { trivalent_script_t };
-
-# Roleattribute association
-roleattribute trivalent_roles trivalent_t;
-roleattribute trivalent_script_roles trivalent_script_t;
+roleattribute object_r trivalent_roles;
 
 type trivalent_t;
 type trivalent_home_t;
 type trivalent_exec_t;
-domain_type(trivalent_t, trivalent_exec_t);
-application_domain(trivalent_t, trivalent_exec_t);
+domain_type(trivalent_t, trivalent_exec_t)
+application_domain(trivalent_t, trivalent_exec_t)
+
+role trivalent_roles types { trivalent_t trivalent_home_t };
+
+userdom_user_home_content(trivalent_home_t)
+
+# trivalent script
+attribute_role trivalent_script_roles;
+roleattribute object_r trivalent_script_roles;
 
 type trivalent_script_t;
 type trivalent_script_exec_t;
-domain_type(trivalent_script_t, trivalent_script_exec_t);
-application_domain(trivalent_script_t, trivalent_script_exec_t);
+domain_type(trivalent_script_t, trivalent_script_exec_t)
+application_domain(trivalent_script_t, trivalent_script_exec_t)
+
+role trivalent_script_roles types trivalent_script_t;
 
 gen_require(`
 	type audio_home_t;
@@ -46,7 +49,7 @@ gen_require(`
 	type xserver_misc_device_t;
 ')
 
-# Internal
+# internal
 allow trivalent_t self:process { execmem getcap getsched setcap setrlimit setsched sigkill signal signull manage_file_perms execute };
 allow trivalent_t self:dir { add_name create read remove_name rmdir write manage_file_perms execute };
 allow trivalent_t self:file { append create execute getattr ioctl lock map open read rename unlink write manage_file_perms };
@@ -73,7 +76,7 @@ allow trivalent_t trivalent_home_t:file { append create execute getattr ioctl lo
 allow trivalent_t trivalent_home_t:lnk_file { create read unlink };
 allow trivalent_t self:netlink_route_socket nlmsg_read;
 
-# Not covered by interfaces
+# not covered by interfaces
 allow trivalent_t pki_ca_port_t:tcp_socket name_connect;
 allow trivalent_t howl_port_t:udp_socket name_bind;
 allow trivalent_t http_port_t:tcp_socket { name_connect };
@@ -81,10 +84,10 @@ allow trivalent_t http_cache_port_t:tcp_socket { name_connect };
 allow trivalent_t tmp_t:lnk_file { create unlink };
 allow trivalent_t tmp_t:sock_file { create unlink };
 
-# Required for trivalent to detect whether it's the default browser
+# required for trivalent to be able to detect whether it's the default browser
 allow trivalent_t trivalent_script_exec_t:file { execute getattr read manage_dir_perms };
 
-# Homedir access
+# homedir access
 allow trivalent_t user_home_t:dir { read add_name search getattr write remove_name watch manage_dir_perms manage_file_perms };
 allow trivalent_t user_home_t:file { create open read write rename unlink setattr getattr manage_file_perms };
 allow trivalent_t user_home_t:lnk_file { create open read write rename unlink setattr getattr manage_file_perms };
@@ -92,7 +95,8 @@ allow trivalent_t audio_home_t:dir { add_name read remove_name watch write searc
 allow trivalent_t audio_home_t:file { create getattr open read rename setattr unlink write };
 allow trivalent_t audio_home_t:lnk_file { create getattr open read rename setattr unlink write };
 
-# Xwayland/nvidia
+# xwayland/nvidia
+
 files_list_home(trivalent_t)
 files_search_home(trivalent_t)
 files_read_usr_files(trivalent_t)
@@ -113,7 +117,7 @@ kernel_read_system_state(trivalent_t)
 kernel_read_kernel_sysctls(trivalent_t)
 kernel_read_fs_sysctls(trivalent_t)
 
-# Required to connect to wayland
+# required to connect to wayland
 unconfined_stream_connect(trivalent_t)
 dbus_system_bus_client(trivalent_t)
 dbus_session_bus_client(trivalent_t)
@@ -186,7 +190,7 @@ logging_write_syslog_pid_socket(trivalent_t)
 
 auth_read_passwd_file(trivalent_t)
 
-# Needed to be able to xdg-open, which is bin_t
+# needed to be able to xdg-open, which is bin_t
 corecmd_exec_bin(trivalent_t)
 
 pcscd_stream_connect(trivalent_t)
@@ -223,6 +227,7 @@ optional_policy(`
 	trivalent_filetrans_home_content(unconfined_t)
 ')
 
+
 allow trivalent_script_t trivalent_t:dir { getattr };
 allow trivalent_script_t self:dir { add_name write };
 allow trivalent_script_t self:file { create };
@@ -234,7 +239,8 @@ allow trivalent_script_t trivalent_home_t:dir { add_name create read remove_name
 allow trivalent_script_t trivalent_home_t:file { append create execute getattr ioctl lock map open read rename unlink write };
 allow trivalent_script_t trivalent_home_t:lnk_file { create read unlink };
 
-# Xwayland/nvidia
+# xwayland/nvidia
+
 gnome_manage_data(trivalent_script_t)
 gnome_manage_home_config(trivalent_script_t)
 gnome_manage_home_config_dirs(trivalent_script_t)
