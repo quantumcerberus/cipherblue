@@ -45,7 +45,6 @@ interface(`trivalent_run',`
 ')
 
 
-
 ########################################
 ## <summary>
 ##	Execute trivalent script in the trivalent script domain.
@@ -90,10 +89,11 @@ interface(`trivalent_script_run',`
         roleattribute $2 trivalent_script_roles;
 ')
 
+
 ########################################
 ## <summary>
 ##      Create trivalent directory in the user home directory
-##      with an correct label.
+##      with the correct label.
 ## </summary>
 ## <param name="domain">
 ##      <summary>
