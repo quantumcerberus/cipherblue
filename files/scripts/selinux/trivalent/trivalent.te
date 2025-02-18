@@ -46,7 +46,7 @@ gen_require(`
     type user_home_t;
     type user_home_dir_t;
     type xserver_misc_device_t;
-')
+'')  # Fixed the unmatched backtick and quotation mark.
 
 # internal
 allow trivalent_t self:process { execmem getcap getsched setcap setsched sigkill signal signull manage_file_perms execute };
