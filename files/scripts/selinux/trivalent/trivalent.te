@@ -1,6 +1,5 @@
 policy_module(trivalent, 1.0.0)
 
-
 ########################################
 #
 # Declarations
@@ -32,25 +31,25 @@ application_domain(trivalent_script_t, trivalent_script_exec_t)
 role trivalent_script_roles types trivalent_script_t;
 
 gen_require(`
-	type audio_home_t;
-	type chrome_sandbox_home_t;
-	type config_home_t;
-	type cache_home_t;
-	type unconfined_dbusd_t;
-	type unconfined_service_t;
-	type unconfined_t;
-	type http_port_t;
-	type http_cache_port_t;
-	type howl_port_t;
-	type pki_ca_port_t;
-	type setfiles_exec_t;
-	type user_home_t;
-	type user_home_dir_t;
-	type xserver_misc_device_t;
+    type audio_home_t;
+    type chrome_sandbox_home_t;
+    type config_home_t;
+    type cache_home_t;
+    type unconfined_dbusd_t;
+    type unconfined_service_t;
+    type unconfined_t;
+    type http_port_t;
+    type http_cache_port_t;
+    type howl_port_t;
+    type pki_ca_port_t;
+    type setfiles_exec_t;
+    type user_home_t;
+    type user_home_dir_t;
+    type xserver_misc_device_t;
 ')
 
 # internal
-allow trivalent_t self:process { execmem getcap getsched setcap setrlimit setsched sigkill signal signull manage_file_perms execute };
+allow trivalent_t self:process { execmem getcap getsched setcap setsched sigkill signal signull manage_file_perms execute };
 allow trivalent_t self:dir { add_name create read remove_name rmdir write manage_file_perms execute };
 allow trivalent_t self:file { append create execute getattr ioctl lock map open read rename unlink write manage_file_perms };
 allow trivalent_t self:lnk_file { create read unlink };
@@ -117,80 +116,7 @@ kernel_read_system_state(trivalent_t)
 kernel_read_kernel_sysctls(trivalent_t)
 kernel_read_fs_sysctls(trivalent_t)
 
-# required to connect to wayland
-unconfined_stream_connect(trivalent_t)
-dbus_system_bus_client(trivalent_t)
-dbus_session_bus_client(trivalent_t)
-
-dbus_write_session_tmp_sock_files(trivalent_t)
-devicekit_dbus_chat_disk(trivalent_t)
-devicekit_dbus_chat_power(trivalent_t)
-systemd_dbus_chat_hostnamed(trivalent_t)
-
-fs_rw_inherited_tmpfs_files(trivalent_t)
-fs_getattr_xattr_fs(trivalent_t)
-fs_getattr_tmpfs(trivalent_t)
-fs_manage_tmpfs_files(trivalent_t)
-fs_map_tmpfs_files(trivalent_t)
-fs_search_cgroup_dirs(trivalent_t)
-fs_associate_proc(trivalent_t)
-
-miscfiles_read_all_certs(trivalent_t)
-miscfiles_map_generic_certs(trivalent_t)
-miscfiles_read_localization(trivalent_t)
-miscfiles_watch_localization_dirs(trivalent_t)
-miscfiles_read_hwdata(trivalent_t)
-
-alsa_read_rw_config(trivalent_t)
-pulseaudio_tmpfs_content(trivalent_t)
-pulseaudio_stream_connect(trivalent_t)
-pulseaudio_read_home_files(trivalent_t)
-cups_read_config(trivalent_t)
-cups_stream_connect(trivalent_t)
-
-dev_read_sysfs(trivalent_t)
-dev_rw_dma_dev(trivalent_t)
-dev_rw_dri(trivalent_t)
-dev_rw_generic_usb_dev(trivalent_t)
-dev_read_video_dev(trivalent_t)
-dev_read_sound(trivalent_t)
-dev_write_sound(trivalent_t)
-dev_read_urand(trivalent_t)
-dev_read_rand(trivalent_t)
-
-udev_read_pid_files(trivalent_t)
-
-gnome_search_gconf_data_dir(trivalent_t)
-gnome_manage_cache_home_dir(trivalent_t)
-gnome_manage_generic_cache_files(trivalent_t)
-gnome_manage_generic_cache_sockets(trivalent_t)
-gnome_map_generic_cache_files(trivalent_t)
-gnome_manage_home_config(trivalent_t)
-gnome_exec_config_home_files(trivalent_t)
-gnome_manage_home_config_dirs(trivalent_t)
-gnome_manage_data(trivalent_t)
-gnome_manage_generic_home_files(trivalent_t)
-gnome_manage_generic_home_dirs(trivalent_t)
-gnome_map_generic_data_home_files(trivalent_t)
-gnome_manage_gstreamer_home_files(trivalent_t)
-gnome_dbus_chat_gconfdefault(trivalent_t)
-gnome_dbus_chat_gkeyringd(trivalent_t)
-
-userdom_manage_user_tmp_sockets(trivalent_t)
-userdom_manage_user_tmp_files(trivalent_t)
-userdom_map_tmp_files(trivalent_t)
-userdom_manage_tmpfs_files(trivalent_t)
-userdom_read_inherited_user_tmp_files(trivalent_t)
-userdom_manage_home_certs(trivalent_t)
-userdom_use_user_terminals(trivalent_t)
-userdom_list_user_home_dirs(trivalent_t)
-
-logging_write_journal_files(trivalent_t)
-logging_write_syslog_pid_socket(trivalent_t)
-
-auth_read_passwd_file(trivalent_t)
-
-# needed to be able to xdg-open, which is bin_t
+# required to be able to xdg-open, which is bin_t
 corecmd_exec_bin(trivalent_t)
 
 pcscd_stream_connect(trivalent_t)
@@ -217,14 +143,14 @@ networkmanager_dbus_chat(trivalent_t)
 storage_getattr_fixed_disk_dev(trivalent_t)
 
 optional_policy(`
-	gen_require(`
-		type unconfined_t;
-		role unconfined_r;
-	')
+    gen_require(`
+        type unconfined_t;
+        role unconfined_r;
+    ')
 
-	trivalent_run(trivalent_script_t, unconfined_r)
-	trivalent_script_run(unconfined_t, unconfined_r)
-	trivalent_filetrans_home_content(unconfined_t)
+    trivalent_run(trivalent_script_t, unconfined_r)
+    trivalent_script_run(unconfined_t, unconfined_r)
+    trivalent_filetrans_home_content(unconfined_t)
 `)
 
 allow trivalent_script_t trivalent_t:dir { getattr };
