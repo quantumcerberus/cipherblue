@@ -1,5 +1,6 @@
 policy_module(trivalent, 1.0.0)
 
+
 ########################################
 #
 # Declarations
@@ -225,7 +226,6 @@ optional_policy(`
 	trivalent_script_run(unconfined_t, unconfined_r)
 	trivalent_filetrans_home_content(unconfined_t)
 `)
-
 
 allow trivalent_script_t trivalent_t:dir { getattr };
 allow trivalent_script_t self:dir { add_name write };
