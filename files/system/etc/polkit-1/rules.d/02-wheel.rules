@@ -12,10 +12,9 @@ polkit.addRule(function(action, subject) {
          action.id == "org.freedesktop.Flatpak.update-remote" ||
          action.id == "org.freedesktop.Flatpak.appstream-update" ||
          action.id == "org.freedesktop.accounts.user-administration" ||
-         action.id == "org.freedesktop.NetworkManager.settings.modify.system" ||
          action.id == "org.projectatomic.rpmostree1.cleanup") &&
          subject.active == true && subject.local == true &&
          subject.isInGroup("wheel")) {
-         return polkit.Result.AUTH_SELF;
+         return polkit.Result.AUTH_SELF_KEEP;
     }
 });
