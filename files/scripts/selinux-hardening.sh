@@ -59,6 +59,7 @@ sebools=(
     postgresql_selinux_users_ddl
     privoxy_connect_any
     secadm_exec_content
+    selinuxuser_direct_dri_enabled
     selinuxuser_execheap
     selinuxuser_execmod
     selinuxuser_execstack
@@ -67,10 +68,12 @@ sebools=(
     spamd_enable_home_dirs
     squid_connect_any
     staff_exec_content
+    sysadm_exec_content
     telepathy_tcp_connect_generic_network_ports
     unconfined_chrome_sandbox_transition
     unconfined_mozilla_plugin_transition
     use_virtualbox
+    user_exec_content
     virt_sandbox_use_all_caps
     virt_sandbox_use_audit
     virt_use_nfs
@@ -93,7 +96,6 @@ done
 sebools=(
     deny_bluetooth
     deny_ptrace
-    xdm_sysadm_login
     secure_mode
     secure_mode_policyload
 )
