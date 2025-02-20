@@ -4,8 +4,8 @@ set -oue pipefail
 
 dnf5 install --setopt=install_weak_deps=False selinux-policy-devel -y
 
-cd ./selinux/trivalent
-bash trivalent.sh
+cd ./selinux/chromium
+bash chromium.sh
 cd ../..
 
 cd ./selinux/flatpakfull
