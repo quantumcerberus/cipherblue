@@ -8,7 +8,7 @@ modules:
         - httpsmirrors.sh
         - package-hardening.sh
         - cipherblue-cleanup.sh
-        - hardenuserns.sh
+        - selinux-hardening.sh
     - type: rpm-ostree
       remove:
         - dnf5
@@ -30,7 +30,6 @@ modules:
         - authselect-hardening.sh
         - permission-hardening.sh
         - systemd-hardening.sh
-        - selinux-hardening.sh
         - suid-hardening.sh
     - type: cipherblue-signing
       source: local
