@@ -69,7 +69,6 @@ sebools=(
     staff_exec_content
     telepathy_tcp_connect_generic_network_ports
     unconfined_chrome_sandbox_transition
-    #unconfined_login
     unconfined_mozilla_plugin_transition
     use_virtualbox
     virt_sandbox_use_all_caps
