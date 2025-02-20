@@ -143,15 +143,15 @@ networkmanager_dbus_chat(trivalent_t)
 storage_getattr_fixed_disk_dev(trivalent_t)
 
 optional_policy(`
-    gen_require(`
-        type unconfined_t;
-        role unconfined_r;
-    ')
+	gen_require(`
+		type unconfined_t;
+		role unconfined_r;
+	')
 
-    trivalent_run(trivalent_script_t, unconfined_r)
-    trivalent_script_run(unconfined_t, unconfined_r)
-    trivalent_filetrans_home_content(unconfined_t)
-`)
+	trivalent_run(trivalent_script_t, unconfined_r)
+	trivalent_script_run(unconfined_t, unconfined_r)
+	trivalent_filetrans_home_content(unconfined_t)
+')
 
 allow trivalent_script_t trivalent_t:dir { getattr };
 allow trivalent_script_t self:dir { add_name write };
