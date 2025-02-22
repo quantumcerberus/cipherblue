@@ -11,15 +11,15 @@ modules:
         - selinux-hardening.sh
     - type: rpm-ostree
       remove:
-        - dnf5
-        - crun
         - buildah
-        - yajl
+        - crun
+        - dnf5
+        - fedora-logos
+        - fedora-logos-httpd
         - libdnf5
         - libdnf5-cli
         - sdbus-cpp
-        - fedora-logos
-        - fedora-logos-httpd
+        - yajl
     - type: files
       files:
         - source: system
