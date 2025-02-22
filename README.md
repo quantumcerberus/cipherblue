@@ -13,13 +13,13 @@
 
 Separate Partitions:
 
-- /boot/efi = 500 MB = 477 MiB
-- /boot = 1.0 GB = 954 MiB
-- / = 15 GB = 13.97 GiB
-- /var = 1 GB = 970 MiB
-- /var/log = 1 GB = 970 MiB
-- /var/lib/flatpak = 10 GB = 9.32 GiB
-- /var/home = As much as left
+- /boot/efi = 500 MB = 477 MiB = 0.1%
+- /boot = 1.0 GB = 954 MiB = 0.2%
+- / = 15 GB = 13.97 GiB = 3.0%
+- /var = 1 GB = 970 MiB = 0.2%
+- /var/log = 1 GB = 970 MiB = 0.2%
+- /var/lib/flatpak = 10 GB = 9.32 GiB = 2.0%
+- /var/home = As much as left = 94.3%
 
 ## Installation
 
