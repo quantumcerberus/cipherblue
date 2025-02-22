@@ -3,7 +3,6 @@
 set -oue pipefail
 
 services=(
-    ModemManager
     abrt-journal-core.service
     abrt-oops.service
     abrt-pstoreoops.service
@@ -16,6 +15,9 @@ services=(
     avahi-daemon.socket
     cups
     cups-browsed
+    debug-shell.service
+    emergency.service
+    emergency.target
     geoclue
     gssproxy
     httpd
@@ -25,16 +27,16 @@ services=(
     iscsid.socket
     iscsiuio.service
     iscsiuio.socket
+    kdump.service
     livesys-late.service
     livesys.service
     mcelog.service
+    ModemManager
     multipathd.service
     multipathd.socket
     network-online.target
     nfs-idmapd
     nfs-mountd
-    debug-shell.service
-    kdump.service
     nfs-server
     nfsdcld
     passim.service
@@ -51,8 +53,6 @@ services=(
     sshd
     sssd
     sssd-kcm
-    emergency.service
-    emergency.target
     tailscaled
     vboxservice.service
     vmtoolsd.service
@@ -64,12 +64,12 @@ for service in "${services[@]}"; do
 done
 
 services=(
-    fstrim.timer
-    rpm-ostreed-automatic.timer
     cipher-capabilities
     cipher-cleaner
-    cipher-updater
     cipher-remount
+    cipher-updater
+    fstrim.timer
+    rpm-ostreed-automatic.timer
     tlp
 )
 
