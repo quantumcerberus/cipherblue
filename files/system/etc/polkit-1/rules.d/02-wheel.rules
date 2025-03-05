@@ -8,7 +8,6 @@ polkit.addRule(function(action, subject) {
          action.id == "org.freedesktop.Flatpak.modify-repo" ||
          action.id == "org.freedesktop.Flatpak.runtime-install" ||
          action.id == "org.freedesktop.Flatpak.runtime-uninstall" ||
-         action.id == "org.freedesktop.Flatpak.update-remote" ||
          action.id == "org.projectatomic.rpmostree1.bootconfig" ||
          action.id == "org.projectatomic.rpmostree1.cleanup" ||
          action.id == "org.projectatomic.rpmostree1.rebase" ||
