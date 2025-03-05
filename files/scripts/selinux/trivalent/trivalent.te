@@ -1,5 +1,6 @@
 policy_module(trivalent, 1.0.0)
 
+
 ########################################
 #
 # Declarations
@@ -206,15 +207,18 @@ networkmanager_dbus_chat(trivalent_t)
 
 storage_getattr_fixed_disk_dev(trivalent_t)
 
-# Converted from optional policy
-gen_require(`
-	type unconfined_t;
-	role unconfined_r;
+optional_policy(`
+	gen_require(`
+		type unconfined_t;
+		role unconfined_r;
+	')
+
+	trivalent_run(trivalent_script_t, unconfined_r)
+	trivalent_script_run(unconfined_t, unconfined_r)
+	trivalent_filetrans_home_content(unconfined_t)
 ')
 
-allow trivalent_run(trivalent_script_t, unconfined_r)
-allow trivalent_script_run(unconfined_t, unconfined_r)
-allow trivalent_filetrans_home_content(unconfined_t)
+
 allow trivalent_script_t trivalent_t:dir { getattr };
 allow trivalent_script_t self:dir { add_entry_dir_perms };
 allow trivalent_script_t self:file { create };
