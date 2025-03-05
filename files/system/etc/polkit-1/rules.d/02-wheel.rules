@@ -13,6 +13,6 @@ polkit.addRule(function(action, subject) {
          action.id == "org.projectatomic.rpmostree1.cleanup") &&
          subject.active == true && subject.local == true &&
          subject.isInGroup("wheel")) {
-         return polkit.Result.AUTH_SELF_KEEP;
+         return polkit.Result.AUTH_SELF;
     }
 });
