@@ -1,6 +1,5 @@
 policy_module(trivalent, 1.0.0)
 
-
 ########################################
 #
 # Declarations
@@ -136,8 +135,6 @@ alsa_read_rw_config(trivalent_t)
 pulseaudio_tmpfs_content(trivalent_t)
 pulseaudio_stream_connect(trivalent_t)
 pulseaudio_read_home_files(trivalent_t)
-cups_read_config(trivalent_t)
-cups_stream_connect(trivalent_t)
 
 dev_read_sysfs(trivalent_t)
 dev_rw_dma_dev(trivalent_t)
@@ -206,41 +203,3 @@ sysnet_dns_name_resolve(trivalent_t)
 networkmanager_dbus_chat(trivalent_t)
 
 storage_getattr_fixed_disk_dev(trivalent_t)
-
-optional_policy(`
-	gen_require(`
-		type unconfined_t;
-		role unconfined_r;
-	')
-
-	trivalent_run(trivalent_script_t, unconfined_r)
-	trivalent_script_run(unconfined_t, unconfined_r)
-	trivalent_filetrans_home_content(unconfined_t)
-')
-
-
-allow trivalent_script_t trivalent_t:dir { getattr };
-allow trivalent_script_t self:dir { add_entry_dir_perms };
-allow trivalent_script_t self:file { create };
-allow trivalent_script_t user_home_t:dir { search };
-allow trivalent_script_t chrome_sandbox_home_t:dir { manage_dir_perms };
-allow trivalent_script_t chrome_sandbox_home_t:file { manage_file_perms };
-allow trivalent_script_t chrome_sandbox_home_t:lnk_file read;
-allow trivalent_script_t trivalent_home_t:dir { manage_dir_perms };
-allow trivalent_script_t trivalent_home_t:file { manage_file_perms map };
-allow trivalent_script_t trivalent_home_t:lnk_file { manage_lnk_file_perms };
-
-gnome_manage_data(trivalent_script_t)
-gnome_manage_home_config(trivalent_script_t)
-gnome_manage_home_config_dirs(trivalent_script_t)
-gnome_manage_cache_home_dir(trivalent_script_t)
-gnome_manage_generic_cache_files(trivalent_script_t)
-gnome_manage_generic_cache_sockets(trivalent_script_t)
-gnome_map_generic_cache_files(trivalent_script_t)
-corecmd_exec_shell(trivalent_script_t)
-corecmd_exec_bin(trivalent_script_t)
-files_getattr_all_dirs(trivalent_script_t)
-userdom_list_user_home_dirs(trivalent_script_t)
-kernel_list_proc(trivalent_script_t)
-seutil_exec_setfiles(trivalent_script_t)
-seutil_manage_file_contexts(trivalent_script_t)
