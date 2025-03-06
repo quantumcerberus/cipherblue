@@ -6,7 +6,7 @@ on:
 jobs:
   bluebuild:
     name: Build Cipherblue
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -18,9 +18,8 @@ jobs:
           - cipherblue.yml
     steps:
       - name: Build Cipherblue
-        uses: blue-build/github-action@4d8b4df657ec923574611eec6fd7e959416c47f0
+        uses: blue-build/github-action@main
         with:
-          cli_version: v0.9.7
           recipe: ${{ matrix.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
