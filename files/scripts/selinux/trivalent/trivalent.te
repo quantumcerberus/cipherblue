@@ -1,5 +1,6 @@
 policy_module(trivalent, 1.0.0)
 
+
 ########################################
 #
 # Declarations
@@ -39,10 +40,11 @@ gen_require(`
 	type howl_port_t;
 	type pki_ca_port_t;
 	type user_home_t;
+	type xserver_misc_device_t;
 ')
 
 # internal
-allow trivalent_t self:process { getcap getsched setcap setrlimit setsched sigkill signal signull };
+allow trivalent_t self:process { execmem getcap getsched setcap setrlimit setsched sigkill signal signull };
 allow trivalent_t self:dir { manage_dir_perms };
 allow trivalent_t self:file { manage_file_perms execute map };
 allow trivalent_t self:lnk_file { manage_lnk_file_perms };
@@ -50,7 +52,7 @@ allow trivalent_t self:fifo_file rw_fifo_file_perms;
 allow trivalent_t self:sem create_sem_perms;
 allow trivalent_t self:netlink_kobject_uevent_socket client_stream_socket_perms;
 allow trivalent_t self:user_namespace create;
-allow trivalent_t self:unix_stream_socket connectto;
+allow trivalent_t self:unix_stream_socket { connectto rw_socket_perms };
 allow trivalent_t self:cap_userns { sys_admin sys_chroot sys_ptrace };
 allow trivalent_t self:capability { dac_read_search sys_admin sys_chroot sys_ptrace };
 allow trivalent_t self:fifo_file { manage_fifo_file_perms relabelfrom relabelto };
@@ -76,7 +78,7 @@ allow trivalent_t tmp_t:lnk_file { create unlink };
 allow trivalent_t tmp_t:sock_file { create unlink };
 
 # required for trivalent to be able to detect whether it's the default browser
-allow trivalent_t trivalent_script_exec_t:file { execute getattr read };
+allow trivalent_t trivalent_script_exec_t:file { execute getattr read execute_no_trans ioctl open };
 
 # homedir access
 allow trivalent_t user_home_t:dir { manage_dir_perms };
@@ -85,6 +87,20 @@ allow trivalent_t user_home_t:lnk_file { manage_lnk_file_perms };
 allow trivalent_t audio_home_t:dir { manage_dir_perms };
 allow trivalent_t audio_home_t:file { manage_file_perms };
 allow trivalent_t audio_home_t:lnk_file { manage_lnk_file_perms };
+
+# screenshare access
+allow trivalent_t unconfined_t:unix_stream_socket { connectto rw_socket_perms };
+
+
+
+# xwayland/nvidia
+xserver_exec(trivalent_t)
+dev_rw_xserver_misc(trivalent_t)
+dev_map_xserver_misc(trivalent_t)
+allow trivalent_t xserver_misc_device_t:chr_file { getattr ioctl map open read write };
+xserver_stream_connect_xdm(trivalent_t)
+xserver_stream_connect(trivalent_t)
+xserver_user_x_domain_template(trivalent, trivalent_t, user_tmpfs_t)
 
 files_list_home(trivalent_t)
 files_search_home(trivalent_t)
@@ -134,6 +150,8 @@ alsa_read_rw_config(trivalent_t)
 pulseaudio_tmpfs_content(trivalent_t)
 pulseaudio_stream_connect(trivalent_t)
 pulseaudio_read_home_files(trivalent_t)
+cups_read_config(trivalent_t)
+cups_stream_connect(trivalent_t)
 
 dev_read_sysfs(trivalent_t)
 dev_rw_dma_dev(trivalent_t)
@@ -177,6 +195,13 @@ logging_write_syslog_pid_socket(trivalent_t)
 
 auth_read_passwd_file(trivalent_t)
 
+# needed to be able to xdg-open, which is bin_t
+corecmd_exec_bin(trivalent_t)
+
+pcscd_stream_connect(trivalent_t)
+xserver_use_user_fonts(trivalent_t)
+xserver_map_user_fonts(trivalent_t)
+
 systemd_dbus_chat_hostnamed(trivalent_t)
 systemd_resolved_watch_pid_dirs(trivalent_t)
 init_search_pid_dirs(trivalent_t)
@@ -219,6 +244,13 @@ allow trivalent_script_t trivalent_home_t:dir { manage_dir_perms };
 allow trivalent_script_t trivalent_home_t:file { manage_file_perms map };
 allow trivalent_script_t trivalent_home_t:lnk_file { manage_lnk_file_perms };
 
+
+# xwayland/nvidia
+xserver_exec(trivalent_script_t)
+dev_rw_xserver_misc(trivalent_script_t)
+dev_map_xserver_misc(trivalent_script_t)
+allow trivalent_script_t xserver_misc_device_t:chr_file { getattr ioctl map open read write };
+
 gnome_manage_data(trivalent_script_t)
 gnome_manage_home_config(trivalent_script_t)
 gnome_manage_home_config_dirs(trivalent_script_t)
@@ -231,5 +263,9 @@ corecmd_exec_bin(trivalent_script_t)
 files_getattr_all_dirs(trivalent_script_t)
 userdom_list_user_home_dirs(trivalent_script_t)
 kernel_list_proc(trivalent_script_t)
+kernel_read_proc_files(trivalent_script_t)
+kernel_getattr_proc_files(trivalent_script_t)
+kernel_getattr_proc(trivalent_script_t)
 seutil_exec_setfiles(trivalent_script_t)
 seutil_manage_file_contexts(trivalent_script_t)
+userdom_use_inherited_user_terminals(trivalent_script_t)
