@@ -36,8 +36,9 @@
 	"DefaultSearchProviderEnabled": true,
 	"ExtensionInstallBlocklist": [ "*" ],
 	"ExtensionInstallAllowlist": [
-					"ddkjiahejlhfcafbddmgiahcphecmpfh"
-					],
+					"ddkjiahejlhfcafbddmgiahcphecmpfh",
+		                        "nngceckbapebfimnlniiiahkandclblb"
+				     ],
 	"EnableMediaRouter": false,
 	"AllowCrossOriginAuthPrompt": false,
 	"PasswordManagerEnabled": false,
